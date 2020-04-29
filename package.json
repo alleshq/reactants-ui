@@ -12,7 +12,6 @@
     "docs-start": "next start",
     "clear": "rm -rf dist",
     "build": "yarn run clear && webpack --config scripts/webpack.config.js && tsc -p ./scripts",
-    "prepublishOnly": "yarn run build",
     "release": "yarn run build && yarn publish --access public --non-interactive"
   },
   "dependencies": {
