@@ -1,0 +1,7 @@
+pages
+scripts
+components
+next-env.d.ts
+rollup.config.js
+tsconfig.json
+.gitignore
