@@ -1,14 +1,17 @@
 import React, { useRef, useMemo } from "react";
 import withDefaults from "../utils/with-defaults";
+import { InputTypes } from "../utils/prop-types";
 import useTheme from "../styles/use-theme";
 import { getInputColors } from "./styles";
 
 interface Props {
   className: string;
+  type: InputTypes;
 }
 
 const defaultProps = {
   className: "",
+  type: "default" as InputTypes,
 };
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>;
@@ -17,13 +20,14 @@ export type InputProps = Props & typeof defaultProps & NativeAttrs;
 const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   children,
   className,
+  type,
   ...props
 }) => {
   const theme = useTheme();
   const inputRef = useRef<HTMLInputElement>(null);
   const { bg, color, border, darkerBorder } = useMemo(
-    () => getInputColors(theme),
-    [theme]
+    () => getInputColors(theme, type),
+    [theme, type]
   );
 
   return (

@@ -8,10 +8,10 @@ export default () => {
       <article>
         <h3>Buttons</h3>
         <div>
-          <Button onClick={() => console.log("Clicked")}>Primary</Button>
+          <Button onClick={() => console.log("Clicked")}>Default</Button>
 
-          <Button type="secondary" onClick={() => console.log("Clicked")}>
-            Secondary
+          <Button type="primary" onClick={() => console.log("Clicked")}>
+            Primary
           </Button>
 
           <Button type="danger" onClick={() => console.log("Clicked")}>
@@ -24,10 +24,10 @@ export default () => {
 
           <Button
             disabled
-            type="secondary"
+            type="primary"
             onClick={() => console.log("Clicked")}
           >
-            Disabled Secondary
+            Disabled Primary
           </Button>
 
           <Button disabled type="danger" onClick={() => console.log("Clicked")}>
@@ -39,7 +39,8 @@ export default () => {
       <article>
         <h3>Inputs</h3>
         <div>
-          <Input placeholder="A placeholder" />
+          <Input placeholder="Default" />
+          <Input type="danger" placeholder="Danger" />
         </div>
       </article>
 

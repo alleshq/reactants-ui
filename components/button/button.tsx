@@ -11,7 +11,7 @@ interface Props {
 }
 
 const defaultProps = {
-  type: "primary" as ButtonTypes,
+  type: "default" as ButtonTypes,
   disabled: false,
   className: "",
 };

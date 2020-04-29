@@ -12,15 +12,15 @@ export const getButtonColors = (
   type: ButtonTypes
 ): ButtonColorGroup => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
+    default: {
+      bg: "none",
+      color: theme.palette.foreground,
+      border: `${theme.palette.foreground}22`,
+    },
     primary: {
       bg: theme.palette.primary,
       color: "#fff",
       border: theme.palette.primary,
-    },
-    secondary: {
-      bg: "none",
-      color: theme.palette.foreground,
-      border: `${theme.palette.foreground}22`,
     },
     danger: {
       bg: theme.palette.danger,
