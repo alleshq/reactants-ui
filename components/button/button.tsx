@@ -59,7 +59,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
         }
 
         .btn:disabled {
-          opacity: 0.5;
+          opacity: 0.4;
           cursor: unset;
         }
 
