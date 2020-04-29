@@ -1,5 +1,4 @@
-import Button from "./button";
-import { ButtonProps } from "./button";
+import Button, { ButtonProps } from "./button";
 
 export type Props = ButtonProps;
 export default Button;
