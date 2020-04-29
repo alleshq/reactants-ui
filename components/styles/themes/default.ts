@@ -8,6 +8,7 @@ export const palette: ReactantsThemesPalette = {
   background: "#ffffff",
   foreground: "#000000",
   primary: "#23539e",
+  danger: "#ff5252",
 };
 
 export const font: ReactantsFont = {

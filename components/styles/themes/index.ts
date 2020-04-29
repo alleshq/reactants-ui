@@ -4,6 +4,7 @@ export interface ReactantsThemesPalette {
   background: string;
   foreground: string;
   primary: string;
+  danger: string;
 }
 
 export interface ReactantsFont {

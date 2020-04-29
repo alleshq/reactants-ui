@@ -22,6 +22,11 @@ export const getButtonColors = (
       color: theme.palette.foreground,
       border: `${theme.palette.foreground}22`,
     },
+    danger: {
+      bg: theme.palette.danger,
+      color: "#fff",
+      border: theme.palette.danger,
+    },
   };
 
   const defaultColor = colors["primary"] as ButtonColorGroup;

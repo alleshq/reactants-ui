@@ -14,12 +14,21 @@ export default () => {
           >
             Primary
           </Button>
+
           <Button
             style={{ marginTop: 15, marginBottom: 15 }}
             type="secondary"
             onClick={() => console.log("Clicked")}
           >
             Secondary
+          </Button>
+
+          <Button
+            style={{ marginTop: 15, marginBottom: 15 }}
+            type="danger"
+            onClick={() => console.log("Clicked")}
+          >
+            Danger
           </Button>
         </div>
       </article>
