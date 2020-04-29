@@ -58,6 +58,11 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           outline: none;
         }
 
+        .btn:disabled {
+          opacity: 0.5;
+          cursor: unset;
+        }
+
         .btn:hover:enabled {
           opacity: 0.8;
         }
