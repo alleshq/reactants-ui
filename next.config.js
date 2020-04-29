@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   experimental: {
     reactRefresh: true,
   },
