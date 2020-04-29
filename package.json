@@ -1,0 +1,33 @@
+{
+  "name": "@reactants/ui",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "description": "Alles React UI library.",
+  "scripts": {
+    "dev": "next dev",
+    "docs-build": "yarn docs-collect && next build",
+    "docs-start": "next start",
+    "clear": "rm -rf dist",
+    "build": "yarn run clear && webpack --config scripts/webpack.config.js && tsc -p ./scripts",
+    "postinstall": "yarn run build"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.34",
+    "next": "^9.3.6",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-jsx": "^3.2.5"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.4",
+    "@types/styled-jsx": "^2.2.8",
+    "babel-loader": "^8.1.0",
+    "fs-extra": "^9.0.0",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
