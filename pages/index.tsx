@@ -41,6 +41,8 @@ export default () => {
 
         main {
           padding: 50px;
+          max-width: 800px;
+          margin: 0 auto;
         }
 
         article {
