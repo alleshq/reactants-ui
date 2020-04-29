@@ -1,6 +1,6 @@
 {
   "name": "@reactants/ui",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,8 @@
     "docs-start": "next start",
     "clear": "rm -rf dist",
     "build": "yarn run clear && webpack --config scripts/webpack.config.js && tsc -p ./scripts",
-    "postinstall": "yarn run build"
+    "postinstall": "yarn run build",
+    "release": "yarn run build && yarn publish --access public --non-interactive"
   },
   "dependencies": {
     "@types/react": "^16.9.34",
