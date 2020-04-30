@@ -30,9 +30,11 @@ const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({
   const [shadow, setShadow] = useState<boolean>(false);
 
   const onScroll = () => {
-    setShadow(
-      document.documentElement.scrollTop > headerRef.current.clientHeight
-    );
+    if (headerRef.current) {
+      setShadow(
+        document.documentElement.scrollTop > headerRef.current.clientHeight
+      );
+    }
   };
 
   useEffect(() => {
