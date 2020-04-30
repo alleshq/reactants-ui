@@ -45,7 +45,7 @@ export default () => {
 
       <h3>Inputs</h3>
 
-      <Card header="Colors">
+      <Card header="States">
         <Input placeholder="Default" />
         <Input disabled placeholder="Disabled" />
         <Input errored placeholder="Danger" />
