@@ -37,9 +37,11 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
         .header {
           background: ${theme.palette.foreground}05;
           border-bottom: 1px solid ${theme.palette.foreground}22;
-          color: ${theme.palette.foreground}bb;
+          color: ${theme.palette.foreground}99;
           width: calc(100% - 30px);
           padding: 10px 15px;
+          font-size: 0.9em;
+          font-weight: 400;
         }
 
         .content {
