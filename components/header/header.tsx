@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, memo } from "react";
+import React, { useRef, useEffect, memo } from "react";
 import useTheme from "../styles/use-theme";
 import useCurrentState from "../utils/use-current-state";
 

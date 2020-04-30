@@ -2,6 +2,7 @@ import {
   ReactantsThemesPalette,
   ReactantsFont,
   ReactantsThemes,
+  ReactantsLayout,
 } from "./index";
 
 export const palette: ReactantsThemesPalette = {
@@ -19,6 +20,12 @@ export const palette: ReactantsThemesPalette = {
   grey8: "#fafafa",
 };
 
+export const layout: ReactantsLayout = {
+  gap: "16pt",
+  gapHalf: "8pt",
+  radius: "5px",
+};
+
 export const font: ReactantsFont = {
   sans: '"Inter", sans-serif',
   mono: '"Jetbrains Mono", monospace',
@@ -26,6 +33,7 @@ export const font: ReactantsFont = {
 
 export const themes: ReactantsThemes = {
   palette,
+  layout,
   font,
   type: "dark",
 };

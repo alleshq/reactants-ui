@@ -55,7 +55,7 @@ const Button: React.FC<Props> = memo<Props>(
           color: ${colors.fg};
           cursor: pointer;
           border: 1px solid ${colors.border};
-          border-radius: 5px;
+          border-radius: ${theme.layout.radius};
           transition: opacity 0.2s ease;
           font-family: ${theme.font.sans};
           font-weight: 500;

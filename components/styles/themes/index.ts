@@ -15,6 +15,12 @@ export interface ReactantsThemesPalette {
   grey8: string;
 }
 
+export interface ReactantsLayout {
+  gap: string;
+  gapHalf: string;
+  radius: string;
+}
+
 export interface ReactantsFont {
   sans: string;
   mono: string;
@@ -22,6 +28,7 @@ export interface ReactantsFont {
 
 export interface ReactantsThemes {
   palette: ReactantsThemesPalette;
+  layout: ReactantsLayout;
   font: ReactantsFont;
   type: ThemeTypes;
 }

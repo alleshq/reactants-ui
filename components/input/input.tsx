@@ -18,9 +18,9 @@ interface Props extends React.HTMLAttributes<HTMLInputElement> {
 
 const Input: React.FC<Props> = ({
   value,
-  initialValue,
+  initialValue = "",
   width = "auto",
-  errored,
+  errored = false,
   disabled,
   readOnly,
   label,
@@ -78,7 +78,7 @@ const Input: React.FC<Props> = ({
           box-sizing: border-box;
           background-color: ${colors.bg};
           color: ${colors.fg};
-          border-radius: 5px;
+          border-radius: ${theme.layout.radius};
           border: 1px solid ${colors.border};
           transition: border-color 0.2s ease;
           font-family: ${theme.font.sans};

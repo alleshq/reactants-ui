@@ -13,9 +13,11 @@ const Avatar: React.FC<Props> = memo<Props>(
     const theme = useTheme();
     const [ready, setReady] = useState(false);
 
-    const imgRef = useRef<HTMLImageElement>(null);
-    useEffect(() => imgRef?.current?.complete && setReady(true), []);
     if (typeof size == "number") size = `${size}px`;
+    const imgRef = useRef<HTMLImageElement>(null);
+    useEffect(() => {
+      imgRef?.current?.complete && setReady(true);
+    }, []);
 
     return (
       <span className={`avatar ${className}`}>

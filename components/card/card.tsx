@@ -20,7 +20,7 @@ const Card: React.FC<Props> = memo<Props>(
         <style jsx>{`
           .card {
             border: 1px solid ${theme.palette.grey2};
-            border-radius: 5px;
+            border-radius: ${theme.layout.radius};
           }
 
           .card-header {

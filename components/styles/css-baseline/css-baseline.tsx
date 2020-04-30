@@ -72,6 +72,14 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           letter-spacing: -0.005625rem;
           font-weight: 600;
         }
+
+        *,
+        *:before,
+        *:after {
+          box-sizing: inherit;
+          text-rendering: geometricPrecision;
+          -webkit-tap-highlight-color: transparent;
+        }
       `}</style>
     </>
   );
