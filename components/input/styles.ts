@@ -22,6 +22,6 @@ export const getInputColors = (
         bg: "transparent",
         color: theme.palette.foreground,
         border: theme.palette.grey2,
-        darkerBorder: theme.palette.foreground,
+        darkerBorder: theme.palette.grey5,
       };
 };
