@@ -31,11 +31,11 @@ export default () => {
       </Card>
 
       <Card header="Icon">
-        <Button type="primary" icon={<Trash2 />} size="large">
+        <Button type="danger" icon={<Trash2 />} size="large">
           Delete
         </Button>
 
-        <Button type="primary" icon={<Trash2 />} size="large" iconSide="right">
+        <Button type="danger" icon={<Trash2 />} size="large" iconSide="right">
           Delete
         </Button>
       </Card>
