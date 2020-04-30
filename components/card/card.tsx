@@ -44,6 +44,7 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
           padding: 10px 15px;
           font-size: 0.9em;
           font-weight: 400;
+          cursor: default;
         }
 
         .content {
