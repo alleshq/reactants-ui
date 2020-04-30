@@ -13,6 +13,7 @@ interface Props {
 const defaultProps = {
   type: "default" as InputTypes,
   width: "auto" as number | string,
+  disabled: false,
   className: "",
 };
 
@@ -24,6 +25,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   className,
   type,
   width,
+  disabled,
   ...props
 }) => {
   const theme = useTheme();
@@ -35,7 +37,13 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
 
   return (
     <>
-      <input ref={inputRef} className={`input ${className}`} {...props} />
+      <input
+        ref={inputRef}
+        className={`input ${className}`}
+        disabled={disabled}
+        {...props}
+      />
+
       <style jsx>{`
         .input {
           display: block;
@@ -54,6 +62,10 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
 
         .input:focus {
           border: 1px solid ${darkerBorder};
+        }
+
+        .input:disabled {
+          opacity: 0.6;
         }
       `}</style>
     </>
