@@ -57,6 +57,10 @@ export default () => {
         <Input placeholder="Width: 100%" width="100%" />
       </Card>
 
+      <Card header="Labels">
+        <Input placeholder="Placeholder" label="Label" />
+      </Card>
+
       <style jsx>{`
         h3 {
           margin: 45px 0 25px;
