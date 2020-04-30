@@ -15,8 +15,6 @@
     "release": "yarn run build && yarn publish --access public --non-interactive"
   },
   "dependencies": {
-    "classnames": "^2.2.6",
-    "react-id-generator": "^3.0.0",
     "styled-jsx": "^3.2.5"
   },
   "devDependencies": {
@@ -24,7 +22,6 @@
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
     "@babel/preset-typescript": "^7.9.0",
-    "@types/classnames": "^2.2.10",
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
     "@types/styled-jsx": "^2.2.8",

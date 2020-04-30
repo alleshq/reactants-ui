@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect, memo } from "react";
-import cn from "classnames";
 import useTheme from "../styles/use-theme";
 
 interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -25,7 +24,7 @@ const Avatar: React.FC<Props> = memo<Props>(
           src={src}
           ref={imgRef}
           onLoad={() => setReady(true)}
-          className={`avatar-img ${cn({ ready })}`}
+          className={`avatar-img ${ready ? "ready" : ""}`}
           {...props}
         />
 
