@@ -1,8 +1,9 @@
 import { Coffee } from "react-feather";
-import { useTheme, Button, Input, Card } from "../components";
+import { useTheme, Button, Input, Card, Avatar } from "../components";
 
 export default () => {
   const theme = useTheme();
+  const avatar = "https://github.com/identicons/danteissaias.png";
 
   return (
     <main>
@@ -28,7 +29,7 @@ export default () => {
       </Card>
 
       <Card header="Custom Width">
-        <Button width={100}>Width: 100px</Button>
+        <Button width={200}>Width: 200px</Button>
         <Button width="50%">Width: 50%</Button>
         <Button width="100%">Width: 100%</Button>
       </Card>
@@ -52,13 +53,30 @@ export default () => {
       </Card>
 
       <Card header="Custom Width">
-        <Input placeholder="Width: 100px" width={100} />
+        <Input placeholder="Width: 200px" width={200} />
         <Input placeholder="Width: 50%" width="50%" />
         <Input placeholder="Width: 100%" width="100%" />
       </Card>
 
       <Card header="Labels">
         <Input placeholder="Placeholder" label="Label" />
+      </Card>
+
+      <h3>Avatar</h3>
+
+      <Card header="Sizes">
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "flex-end",
+          }}
+        >
+          <Avatar src={avatar} />
+          <Avatar src={avatar} size={60} />
+          <Avatar src={avatar} size={40} />
+          <Avatar src={avatar} size={20} />
+        </div>
       </Card>
 
       <style jsx>{`

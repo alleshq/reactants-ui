@@ -40,7 +40,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   );
 
   return (
-    <div>
+    <div style={{ width }}>
       {label && <label htmlFor={`input-${htmlId}`}>{label}</label>}
       <input
         ref={inputRef}
@@ -51,10 +51,6 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
       />
 
       <style jsx>{`
-        div {
-          width: ${width};
-        }
-
         .input {
           display: block;
           padding: 9px;

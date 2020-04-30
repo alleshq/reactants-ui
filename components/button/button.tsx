@@ -50,6 +50,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
       ref={buttonRef}
       className={`btn ${className}`}
       onClick={onClick}
+      style={{ width }}
       {...props}
     >
       <span>
@@ -72,7 +73,6 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           font-family: ${theme.font.sans};
           font-weight: 500;
           outline: none;
-          width: ${width};
         }
 
         .btn:disabled {
