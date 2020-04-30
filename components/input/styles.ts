@@ -2,7 +2,7 @@ import { ReactantsThemes } from "../styles/themes";
 
 export interface InputColorGroup {
   bg: string;
-  color: string;
+  fg: string;
   border: string;
   darkerBorder: string;
 }
@@ -14,13 +14,13 @@ export const getInputColors = (
   return errored
     ? {
         bg: "transparent",
-        color: theme.palette.foreground,
+        fg: theme.palette.foreground,
         border: theme.palette.danger,
         darkerBorder: theme.palette.danger,
       }
     : {
         bg: "transparent",
-        color: theme.palette.foreground,
+        fg: theme.palette.foreground,
         border: theme.palette.grey2,
         darkerBorder: theme.palette.grey5,
       };

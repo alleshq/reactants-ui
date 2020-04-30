@@ -1,79 +1,58 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, memo } from "react";
+import cn from "classnames";
 import useTheme from "../styles/use-theme";
-import withDefaults from "../utils/with-defaults";
 
-interface Props {
+interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   src?: string;
-  alt?: string;
   size?: number | string;
   className?: string;
 }
 
-const defaultProps = {
-  size: 80 as number | string,
-  className: "",
-};
+const Avatar: React.FC<Props> = memo<Props>(
+  ({ src, size = 80, className, ...props }) => {
+    const theme = useTheme();
+    const [ready, setReady] = useState(false);
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
-export type AvatarProps = Props & typeof defaultProps & NativeAttrs;
+    const imgRef = useRef<HTMLImageElement>(null);
+    useEffect(() => imgRef?.current?.complete && setReady(true), []);
+    if (typeof size == "number") size = `${size}px`;
 
-const Avatar: React.FC<React.PropsWithChildren<AvatarProps>> = ({
-  src,
-  alt,
-  size,
-  className,
-  ...props
-}) => {
-  const { palette } = useTheme();
-  const [ready, setReady] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-  useEffect(() => {
-    imgRef?.current?.complete && setReady(true);
-  }, []);
+    return (
+      <span className={`avatar ${className}`}>
+        <img
+          src={src}
+          ref={imgRef}
+          onLoad={() => setReady(true)}
+          className={`avatar-img ${cn({ ready })}`}
+          {...props}
+        />
 
-  return (
-    <span
-      key={src}
-      style={{
-        width: size,
-        height: size,
-      }}
-      {...props}
-    >
-      <img
-        ref={imgRef}
-        src={src}
-        alt={alt}
-        onLoad={() => setReady(true)}
-        height={size}
-        width={size}
-        className={ready ? "ready" : ""}
-      />
-      <style jsx>{`
-        span {
-          border-radius: 100%;
-          display: inline-block;
-          border: 1px solid ${palette.grey2};
-          overflow: hidden;
-          background-color: ${palette.grey1};
-          transition: border 0.2s ease, background-color 0.2s ease;
-        }
+        <style jsx>{`
+          .avatar {
+            overflow: hidden;
+            border-radius: 100%;
+            display: inline-block;
+            border: 1px solid ${theme.palette.grey2};
+            background-color: ${theme.palette.grey1};
+            transition: border 0.2s ease, background-color 0.2s ease;
+            width: ${size};
+            height: ${size};
+          }
 
-        img {
-          width: 100%;
-          height: 100%;
-        }
+          .avatar-img {
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.2s ease-in;
+          }
 
-        img {
-          opacity: 0;
-          transition: opacity 0.2s ease-in;
-        }
-        img.ready {
-          opacity: 1;
-        }
-      `}</style>
-    </span>
-  );
-};
+          .avatar-img.ready {
+            opacity: 1;
+          }
+        `}</style>
+      </span>
+    );
+  }
+);
 
-export default withDefaults(Avatar, defaultProps);
+export default Avatar;

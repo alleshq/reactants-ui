@@ -3,7 +3,7 @@ import { ButtonTypes, NormalSizes } from "../utils/prop-types";
 
 export interface ButtonColorGroup {
   bg: string;
-  color: string;
+  fg: string;
   border: string;
 }
 
@@ -14,17 +14,17 @@ export const getButtonColors = (
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
       bg: "transparent",
-      color: theme.palette.foreground,
+      fg: theme.palette.foreground,
       border: theme.palette.grey2,
     },
     primary: {
       bg: theme.palette.primary,
-      color: "#fff",
+      fg: "#fff",
       border: theme.palette.primary,
     },
     danger: {
       bg: theme.palette.danger,
-      color: "#fff",
+      fg: "#fff",
       border: theme.palette.danger,
     },
   };
@@ -35,7 +35,7 @@ export const getButtonColors = (
 
 export interface ButtonSizeGroup {
   padding: string;
-  fontSize: string;
+  font: string;
 }
 
 export const getButtonSize = (
@@ -43,18 +43,18 @@ export const getButtonSize = (
 ): ButtonSizeGroup => {
   const defaultLayout = {
     padding: "7.5px 30px",
-    fontSize: "0.83em",
+    font: "0.83em",
   };
 
   const layouts: { [key in NormalSizes]: ButtonSizeGroup } = {
     small: {
       padding: "5px 20px",
-      fontSize: "0.8em",
+      font: "0.8em",
     },
     medium: defaultLayout,
     large: {
       padding: "11.5px 40px",
-      fontSize: "0.925em",
+      font: "0.925em",
     },
   };
 

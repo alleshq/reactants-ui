@@ -27,7 +27,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <ReactantsProvider theme={customTheme}>
       <CSSBaseline />
-      <Header fixed>
+      <Header title="Reactants" fixed>
         <Button
           size="small"
           className="toggle"

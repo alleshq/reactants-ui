@@ -1,81 +1,101 @@
-import React, { useRef, useMemo } from "react";
-import { useId } from "react-id-generator";
-import withDefaults from "../utils/with-defaults";
+import React, { useMemo, useState, useEffect } from "react";
 import useTheme from "../styles/use-theme";
 import { getInputColors } from "./styles";
 
-interface Props {
+interface Props extends React.HTMLAttributes<HTMLInputElement> {
+  value?: string;
+  initialValue?: string;
   width?: number | string;
   errored?: boolean;
+  disabled?: boolean;
+  readOnly?: boolean;
   label?: string;
   className?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
-const defaultProps = {
-  width: "auto" as number | string,
-  errored: false,
-  disabled: false,
-  label: "",
-  className: "",
-};
-
-type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>;
-export type InputProps = Props & typeof defaultProps & NativeAttrs;
-
-const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
-  children,
-  className,
-  width,
+const Input: React.FC<Props> = ({
+  value,
+  initialValue,
+  width = "auto",
   errored,
   disabled,
+  readOnly,
   label,
+  className,
+  onChange,
+  onFocus,
+  onBlur,
+  children,
+  placeholder,
   ...props
 }) => {
   const theme = useTheme();
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [htmlId] = useId();
-  const { bg, color, border, darkerBorder } = useMemo(
-    () => getInputColors(theme, errored),
-    [theme, errored]
-  );
+  if (typeof width == "number") width = `${width}px`;
+  const colors = useMemo(() => getInputColors(theme, errored), [
+    theme,
+    errored,
+  ]);
+
+  const [selfValue, setSelfValue] = useState<string>(initialValue);
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (disabled || readOnly) return;
+    setSelfValue(event.target.value);
+    onChange && onChange(event);
+  };
+
+  useEffect(() => {
+    if (value === undefined) return;
+    setSelfValue(value);
+  }, [value]);
 
   return (
-    <div style={{ width }}>
-      {label && <label htmlFor={`input-${htmlId}`}>{label}</label>}
+    <div className={`input-container ${className}`}>
+      {label && <label>{label}</label>}
+
       <input
-        ref={inputRef}
-        className={`input ${className}`}
         disabled={disabled}
-        id={`input-${htmlId}`}
+        placeholder={placeholder}
+        value={selfValue}
+        readOnly={readOnly}
+        onChange={changeHandler}
+        onBlur={onBlur}
+        onFocus={onFocus}
         {...props}
       />
 
       <style jsx>{`
-        .input {
+        .input-container {
+          width: ${width};
+        }
+
+        input {
           display: block;
           padding: 9px;
           font-size: 0.875em;
           box-sizing: border-box;
-          background-color: ${bg};
-          color: ${color};
+          background-color: ${colors.bg};
+          color: ${colors.fg};
           border-radius: 5px;
-          border: 1px solid ${border};
+          border: 1px solid ${colors.border};
           transition: border-color 0.2s ease;
           font-family: ${theme.font.sans};
           outline: none;
           width: 100%;
         }
 
-        .input:focus {
-          border: 1px solid ${darkerBorder};
+        input:focus {
+          border: 1px solid ${colors.darkerBorder};
         }
 
-        .input:disabled {
+        input:disabled {
           opacity: 0.6;
         }
 
         label {
-          color: ${theme.palette.foreground}aa;
+          color: ${theme.palette.grey6};
           display: inline-block;
           margin-bottom: 10px;
           font-weight: 500;
@@ -86,6 +106,4 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   );
 };
 
-const MemoButton = React.memo<React.PropsWithChildren<InputProps>>(Input);
-
-export default withDefaults(MemoButton, defaultProps);
+export default Input;

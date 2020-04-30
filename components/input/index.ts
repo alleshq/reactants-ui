@@ -1,4 +1,1 @@
-import Input, { InputProps } from "./input";
-
-export type Props = InputProps;
-export default Input;
+export { default } from "./input";

@@ -57,6 +57,7 @@ export default () => {
         <Input placeholder="Default" />
         <Input disabled placeholder="Disabled" />
         <Input errored placeholder="Danger" />
+        <Input readOnly placeholder="Ready Only" initialValue="Ready Only" />
       </Card>
 
       <Card header="Custom Width">
@@ -96,7 +97,7 @@ export default () => {
           width: 100%;
         }
 
-        :global(.card) > :global(.content) {
+        :global(.card) > :global(.card-content) {
           display: inline-grid;
           gap: 15px;
           justify-items: start;
