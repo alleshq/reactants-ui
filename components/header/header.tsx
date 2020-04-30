@@ -1,4 +1,5 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import cn from "classnames";
 import useTheme from "../styles/use-theme";
 import withDefaults from "../utils/with-defaults";
 
@@ -26,28 +27,24 @@ const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({
 }) => {
   const { palette, type } = useTheme();
   const headerRef = useRef<HTMLHeadingElement>(null);
+  const [shadow, setShadow] = useState<boolean>(false);
 
   const onScroll = () => {
-    if (document.documentElement.scrollTop > headerRef.current.clientHeight) {
-      headerRef.current.classList.add("shadow");
-    } else {
-      headerRef.current.classList.remove("shadow");
-    }
+    setShadow(
+      document.documentElement.scrollTop > headerRef.current.clientHeight
+    );
   };
 
   useEffect(() => {
     onScroll();
     window.addEventListener("scroll", onScroll);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, [type]);
 
   return (
     <header
       ref={headerRef}
-      className={`header ${className} ${fixed && "fixed"}`}
+      className={`header ${className} ${cn({ shadow, fixed })}`}
       {...props}
     >
       <h4>{title}</h4>

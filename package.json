@@ -15,9 +15,11 @@
     "release": "yarn run build && yarn publish --access public --non-interactive"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "styled-jsx": "^3.2.5"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
     "@types/styled-jsx": "^2.2.8",
