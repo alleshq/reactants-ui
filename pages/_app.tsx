@@ -37,7 +37,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
             });
           }}
         >
-          {customTheme.type == "light" ? "Dark" : "Light"}
+          {customTheme.type == "dark" ? "Light" : "Dark"}
         </Button>
       </Header>
 
