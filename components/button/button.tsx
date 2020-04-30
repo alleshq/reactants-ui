@@ -68,7 +68,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           cursor: pointer;
           border: 1px solid ${border};
           border-radius: 5px;
-          transition: all 0.2s ease;
+          transition: opacity 0.2s ease;
           font-family: ${theme.font.sans};
           font-weight: 500;
           outline: none;

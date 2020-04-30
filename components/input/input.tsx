@@ -54,7 +54,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
           color: ${color};
           border-radius: 5px;
           border: 1px solid ${border};
-          transition: all 0.2s ease;
+          transition: border-color 0.2s ease;
           font-family: ${theme.font.sans};
           outline: none;
           width: ${width};

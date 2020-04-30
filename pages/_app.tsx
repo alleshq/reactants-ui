@@ -7,6 +7,7 @@ import {
   useTheme,
   CSSBaseline,
   Button,
+  Header,
 } from "../components";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
@@ -26,7 +27,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <ReactantsProvider theme={customTheme}>
       <CSSBaseline />
-      <div style={{ position: "fixed", top: 25, left: 25 }}>
+      <Header fixed>
         <Button
           size="small"
           className="toggle"
@@ -38,8 +39,11 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
         >
           {customTheme.type == "light" ? "Dark" : "Light"}
         </Button>
+      </Header>
+
+      <div style={{ paddingTop: 55 }}>
+        <Component {...pageProps} />
       </div>
-      <Component {...pageProps} />
     </ReactantsProvider>
   );
 };

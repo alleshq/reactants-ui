@@ -63,7 +63,7 @@ export default () => {
         }
 
         main {
-          padding: 0 10px 50px;
+          padding: 0 0 50px;
           max-width: 800px;
           margin: 0 auto;
         }
