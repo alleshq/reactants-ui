@@ -13,7 +13,7 @@ export const getButtonColors = (
 ): ButtonColorGroup => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
-      bg: "none",
+      bg: "transparent",
       color: theme.palette.foreground,
       border: theme.palette.grey2,
     },

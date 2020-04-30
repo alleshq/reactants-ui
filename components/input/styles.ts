@@ -13,13 +13,13 @@ export const getInputColors = (
 ): InputColorGroup => {
   return errored
     ? {
-        bg: "none",
+        bg: "transparent",
         color: theme.palette.foreground,
         border: theme.palette.danger,
         darkerBorder: theme.palette.danger,
       }
     : {
-        bg: "none",
+        bg: "transparent",
         color: theme.palette.foreground,
         border: theme.palette.grey2,
         darkerBorder: theme.palette.foreground,
