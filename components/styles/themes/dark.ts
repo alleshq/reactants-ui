@@ -9,6 +9,14 @@ export const palette: ReactantsThemesPalette = {
   foreground: "#ffffff",
   primary: "#23539e",
   danger: "#ff5252",
+  grey1: "#111",
+  grey2: "#333",
+  grey3: "#444",
+  grey4: "#666",
+  grey5: "#888",
+  grey6: "#999",
+  grey7: "#eaeaea",
+  grey8: "#fafafa",
 };
 
 export const font: ReactantsFont = {

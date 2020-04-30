@@ -20,7 +20,6 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
         html {
           font-size: 16px;
-          --zeit-icons-background: ${theme.palette.background};
         }
 
         body {

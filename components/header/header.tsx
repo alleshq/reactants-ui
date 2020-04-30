@@ -58,8 +58,8 @@ const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({
           align-items: center;
           justify-content: space-between;
           height: 55px;
-          background: ${palette.background};
-          border-bottom: 1px solid ${palette.foreground}22;
+          background-color: ${palette.background};
+          border-bottom: 1px solid ${palette.grey2};
           z-index: 999;
           padding: 0 20px;
           box-shadow: none;

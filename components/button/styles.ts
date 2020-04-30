@@ -15,7 +15,7 @@ export const getButtonColors = (
     default: {
       bg: "none",
       color: theme.palette.foreground,
-      border: `${theme.palette.foreground}22`,
+      border: theme.palette.grey2,
     },
     primary: {
       bg: theme.palette.primary,

@@ -30,16 +30,16 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
       <div className="content">{children}</div>
       <style jsx>{`
         .card {
-          border: 1px solid ${palette.foreground}22;
+          border: 1px solid ${palette.grey2};
           border-radius: 5px;
         }
 
         .header {
-          background: ${type == "dark"
-            ? `${palette.foreground}0a`
-            : `${palette.foreground}05`};
-          border-bottom: 1px solid ${palette.foreground}22;
-          color: ${palette.foreground}99;
+          background-color: ${palette.grey1};
+          border-bottom: 1px solid ${palette.grey2};
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          color: ${palette.grey5};
           width: calc(100% - 30px);
           padding: 10px 15px;
           font-size: 0.9em;

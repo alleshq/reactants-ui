@@ -63,7 +63,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           padding: ${padding};
           font-size: ${fontSize};
           box-sizing: border-box;
-          background: ${bg};
+          background-color: ${bg};
           color: ${color};
           cursor: pointer;
           border: 1px solid ${border};

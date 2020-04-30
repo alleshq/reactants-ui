@@ -60,7 +60,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
           padding: 9px;
           font-size: 0.875em;
           box-sizing: border-box;
-          background: ${bg};
+          background-color: ${bg};
           color: ${color};
           border-radius: 5px;
           border: 1px solid ${border};
