@@ -52,6 +52,10 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
       />
 
       <style jsx>{`
+        div {
+          width: ${width};
+        }
+
         .input {
           display: block;
           padding: 9px;
@@ -64,7 +68,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
           transition: border-color 0.2s ease;
           font-family: ${theme.font.sans};
           outline: none;
-          width: ${width};
+          width: 100%;
         }
 
         .input:focus {
