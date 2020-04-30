@@ -53,8 +53,8 @@ export const getButtonSize = (
     },
     medium: defaultLayout,
     large: {
-      padding: "10px 40px",
-      fontSize: "0.875em",
+      padding: "11.5px 40px",
+      fontSize: "0.925em",
     },
   };
 
