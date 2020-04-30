@@ -1,4 +1,4 @@
-import { Trash2 } from "react-feather";
+import { Coffee } from "react-feather";
 import { useTheme, Button, Input, Card } from "../components";
 
 export default () => {
@@ -34,12 +34,12 @@ export default () => {
       </Card>
 
       <Card header="Icon">
-        <Button type="danger" icon={<Trash2 />} size="large">
-          Delete
+        <Button icon={<Coffee />} size="large">
+          Icon
         </Button>
 
-        <Button type="danger" icon={<Trash2 />} size="large" iconRight>
-          Delete
+        <Button icon={<Coffee />} size="large" iconRight>
+          Icon
         </Button>
       </Card>
 
