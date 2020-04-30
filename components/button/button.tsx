@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from "react";
 import withDefaults from "../utils/with-defaults";
 import useTheme from "../styles/use-theme";
-import { ButtonTypes, NormalSizes, NormalSides } from "../utils/prop-types";
+import { ButtonTypes, NormalSizes } from "../utils/prop-types";
 import { getButtonColors, getButtonSize } from "./styles";
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   size?: NormalSizes;
   width?: number | string;
   icon?: React.ReactNode;
-  iconSide?: NormalSides;
+  iconRight?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
 }
@@ -18,7 +18,7 @@ const defaultProps = {
   type: "default" as ButtonTypes,
   size: "medium" as NormalSizes,
   width: "auto" as number | string,
-  iconSide: "left" as NormalSides,
+  iconRight: false,
   disabled: false,
   className: "",
 };
@@ -34,7 +34,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   className,
   width,
   icon,
-  iconSide,
+  iconRight,
   ...props
 }) => {
   const theme = useTheme();
@@ -101,11 +101,11 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
 
         .btn span :global(svg) {
           position: absolute;
-          left: ${iconSide == "right" ? "unset" : "15px"};
-          right: ${iconSide == "right" ? "15px" : "unset"};
+          left: ${iconRight ? "unset" : "15px"};
+          right: ${iconRight ? "15px" : "unset"};
           height: 15px;
           width: 15px;
-          margin-${iconSide == "right" ? "left" : "right"}: 10px;
+          margin-${iconRight ? "left" : "right"}: 10px;
           opacity: 0.5;
         }
       `}</style>

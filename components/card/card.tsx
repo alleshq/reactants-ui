@@ -3,12 +3,12 @@ import useTheme from "../styles/use-theme";
 import withDefaults from "../utils/with-defaults";
 
 interface Props {
-  header?: string;
+  header?: string | React.ReactNode;
   className?: string;
 }
 
 const defaultProps = {
-  header: "",
+  header: "" as string | React.ReactNode,
   className: "",
 };
 

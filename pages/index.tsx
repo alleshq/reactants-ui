@@ -38,7 +38,7 @@ export default () => {
           Delete
         </Button>
 
-        <Button type="danger" icon={<Trash2 />} size="large" iconSide="right">
+        <Button type="danger" icon={<Trash2 />} size="large" iconRight>
           Delete
         </Button>
       </Card>
