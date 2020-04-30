@@ -1,4 +1,5 @@
 import React, { useRef, useMemo } from "react";
+import { useId } from "react-id-generator";
 import withDefaults from "../utils/with-defaults";
 import useTheme from "../styles/use-theme";
 import { getInputColors } from "./styles";
@@ -21,8 +22,6 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>;
 export type InputProps = Props & typeof defaultProps & NativeAttrs;
 
-let counter = 0;
-
 const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   children,
   className,
@@ -34,7 +33,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
 }) => {
   const theme = useTheme();
   const inputRef = useRef<HTMLInputElement>(null);
-  const id = counter++;
+  const [htmlId] = useId();
   const { bg, color, border, darkerBorder } = useMemo(
     () => getInputColors(theme, errored),
     [theme, errored]
@@ -42,12 +41,12 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
 
   return (
     <div>
-      {label && <label htmlFor={`input-${id}`}>{label}</label>}
+      {label && <label htmlFor={`input-${htmlId}`}>{label}</label>}
       <input
         ref={inputRef}
         className={`input ${className}`}
         disabled={disabled}
-        id={`input-${id}`}
+        id={`input-${htmlId}`}
         {...props}
       />
 
