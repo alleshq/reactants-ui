@@ -5,13 +5,15 @@ import useTheme from "../styles/use-theme";
 import { getInputColors } from "./styles";
 
 interface Props {
-  className: string;
-  type: InputTypes;
+  type?: InputTypes;
+  width?: string;
+  className?: string;
 }
 
 const defaultProps = {
-  className: "",
   type: "default" as InputTypes,
+  width: "auto",
+  className: "",
 };
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>;
@@ -21,6 +23,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   children,
   className,
   type,
+  width,
   ...props
 }) => {
   const theme = useTheme();
@@ -46,6 +49,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
           transition: all 0.2s ease;
           font-family: ${theme.font.sans};
           outline: none;
+          width: ${width};
         }
 
         .input:focus {

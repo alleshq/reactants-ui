@@ -1,5 +1,5 @@
 import { ReactantsThemes } from "../styles/themes";
-import { ButtonTypes } from "../utils/prop-types";
+import { ButtonTypes, NormalSizes } from "../utils/prop-types";
 
 export interface ButtonColorGroup {
   bg: string;
@@ -31,4 +31,32 @@ export const getButtonColors = (
 
   const defaultColor = colors["primary"] as ButtonColorGroup;
   return colors[type] || defaultColor;
+};
+
+export interface ButtonSizeGroup {
+  padding: string;
+  fontSize: string;
+}
+
+export const getButtonSize = (
+  size: NormalSizes = "medium"
+): ButtonSizeGroup => {
+  const defaultLayout = {
+    padding: "7.5px 17px",
+    fontSize: "0.83em",
+  };
+
+  const layouts: { [key in NormalSizes]: ButtonSizeGroup } = {
+    small: {
+      padding: "6px 13px",
+      fontSize: "0.8em",
+    },
+    medium: defaultLayout,
+    large: {
+      padding: "9px 17px",
+      fontSize: "0.875em",
+    },
+  };
+
+  return layouts[size] || defaultLayout;
 };

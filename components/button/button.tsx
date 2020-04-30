@@ -1,17 +1,21 @@
 import React, { useRef, useMemo } from "react";
 import withDefaults from "../utils/with-defaults";
 import useTheme from "../styles/use-theme";
-import { ButtonTypes } from "../utils/prop-types";
-import { getButtonColors } from "./styles";
+import { ButtonTypes, NormalSizes } from "../utils/prop-types";
+import { getButtonColors, getButtonSize } from "./styles";
 
 interface Props {
-  type: ButtonTypes;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-  className: string;
+  type?: ButtonTypes;
+  size?: NormalSizes;
+  width?: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  className?: string;
 }
 
 const defaultProps = {
   type: "default" as ButtonTypes,
+  size: "medium" as NormalSizes,
+  width: "auto",
   disabled: false,
   className: "",
 };
@@ -22,8 +26,10 @@ export type ButtonProps = Props & typeof defaultProps & NativeAttrs;
 const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   children,
   type,
+  size,
   onClick,
   className,
+  width,
   ...props
 }) => {
   const theme = useTheme();
@@ -32,6 +38,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
     theme,
     type,
   ]);
+  const { padding, fontSize } = useMemo(() => getButtonSize(size), [size]);
 
   return (
     <button
@@ -44,8 +51,8 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
       <style jsx>{`
         .btn {
           display: block;
-          padding: 9px 17px;
-          font-size: 0.875em;
+          padding: ${padding};
+          font-size: ${fontSize};
           box-sizing: border-box;
           background: ${bg};
           color: ${color};
@@ -56,6 +63,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           font-family: ${theme.font.sans};
           font-weight: 500;
           outline: none;
+          width: ${width};
         }
 
         .btn:disabled {

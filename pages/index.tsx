@@ -10,6 +10,8 @@ export default () => {
         <div>
           <Button onClick={() => console.log("Clicked")}>Default</Button>
 
+          <h4>Colors</h4>
+
           <Button type="primary" onClick={() => console.log("Clicked")}>
             Primary
           </Button>
@@ -18,20 +20,38 @@ export default () => {
             Danger
           </Button>
 
+          <h4>States</h4>
+
           <Button disabled onClick={() => console.log("Clicked")}>
             Disabled
           </Button>
 
-          <Button
-            disabled
-            type="primary"
-            onClick={() => console.log("Clicked")}
-          >
-            Disabled Primary
+          <h4>Sizes</h4>
+
+          <Button size="small" onClick={() => console.log("Clicked")}>
+            Small
           </Button>
 
-          <Button disabled type="danger" onClick={() => console.log("Clicked")}>
-            Disabled Danger
+          <Button size="medium" onClick={() => console.log("Clicked")}>
+            Medium
+          </Button>
+
+          <Button size="large" onClick={() => console.log("Clicked")}>
+            Large
+          </Button>
+
+          <h4>Custom Width</h4>
+
+          <Button width="25%" onClick={() => console.log("Clicked")}>
+            Width: 25%
+          </Button>
+
+          <Button width="50%" onClick={() => console.log("Clicked")}>
+            Width: 50%
+          </Button>
+
+          <Button width="100%" onClick={() => console.log("Clicked")}>
+            Width: 100%
           </Button>
         </div>
       </article>
@@ -40,13 +60,27 @@ export default () => {
         <h3>Inputs</h3>
         <div>
           <Input placeholder="Default" />
+
+          <h4>States</h4>
           <Input type="danger" placeholder="Danger" />
+
+          <h4>Custom Width</h4>
+          <Input placeholder="Width: 25%" width="25%" />
+          <Input placeholder="Width: 50%" width="50%" />
+          <Input placeholder="Width: 100%" width="100%" />
         </div>
       </article>
 
       <style jsx>{`
         h3 {
           margin: 15px 0 30px;
+          font-weight: 600;
+        }
+
+        h4 {
+          margin: 20px 0 5px;
+          padding: 0;
+          font-weight: 500;
         }
 
         main {
@@ -63,6 +97,7 @@ export default () => {
         }
 
         article > div {
+          width: 100%;
           display: inline-grid;
           gap: 15px;
           justify-items: start;
