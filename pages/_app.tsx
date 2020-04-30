@@ -6,6 +6,7 @@ import {
   ReactantsProvider,
   useTheme,
   CSSBaseline,
+  Button,
 } from "../components";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
@@ -25,15 +26,19 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <ReactantsProvider theme={customTheme}>
       <CSSBaseline />
-      <button
-        onClick={() => {
-          themeChangeHandle({
-            type: customTheme.type == "dark" ? "light" : "dark",
-          });
-        }}
-      >
-        toggle
-      </button>
+      <div style={{ position: "fixed", top: 25, left: 25 }}>
+        <Button
+          size="small"
+          className="toggle"
+          onClick={() => {
+            themeChangeHandle({
+              type: customTheme.type == "dark" ? "light" : "dark",
+            });
+          }}
+        >
+          {customTheme.type == "light" ? "Dark" : "Light"}
+        </Button>
+      </div>
       <Component {...pageProps} />
     </ReactantsProvider>
   );
