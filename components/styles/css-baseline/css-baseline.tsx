@@ -36,6 +36,43 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           overflow-x: hidden;
           font-family: ${theme.font.sans};
         }
+
+        h1 {
+          font-size: 3rem;
+          letter-spacing: -0.066875rem;
+          line-height: 1.5;
+          font-weight: 700;
+        }
+
+        h2 {
+          font-size: 2.25rem;
+          letter-spacing: -0.020625rem;
+          font-weight: 600;
+        }
+
+        h3 {
+          font-size: 1.5rem;
+          letter-spacing: -0.029375rem;
+          font-weight: 600;
+        }
+
+        h4 {
+          font-size: 1.25rem;
+          letter-spacing: -0.020625rem;
+          font-weight: 600;
+        }
+
+        h5 {
+          font-size: 1rem;
+          letter-spacing: -0.01125rem;
+          font-weight: 600;
+        }
+
+        h6 {
+          font-size: 0.875rem;
+          letter-spacing: -0.005625rem;
+          font-weight: 600;
+        }
       `}</style>
     </>
   );
