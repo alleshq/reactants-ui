@@ -1,13 +1,15 @@
 import React, { useRef, useMemo } from "react";
 import withDefaults from "../utils/with-defaults";
 import useTheme from "../styles/use-theme";
-import { ButtonTypes, NormalSizes } from "../utils/prop-types";
+import { ButtonTypes, NormalSizes, NormalSides } from "../utils/prop-types";
 import { getButtonColors, getButtonSize } from "./styles";
 
 interface Props {
   type?: ButtonTypes;
   size?: NormalSizes;
   width?: string;
+  icon?: React.ReactNode;
+  iconSide?: NormalSides;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
 }
@@ -16,6 +18,7 @@ const defaultProps = {
   type: "default" as ButtonTypes,
   size: "medium" as NormalSizes,
   width: "auto",
+  iconSide: "left" as NormalSides,
   disabled: false,
   className: "",
 };
@@ -30,6 +33,8 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   onClick,
   className,
   width,
+  icon,
+  iconSide,
   ...props
 }) => {
   const theme = useTheme();
@@ -47,9 +52,13 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
       onClick={onClick}
       {...props}
     >
-      {children}
+      <span>
+        {icon ? icon : ""}
+        {children}
+      </span>
       <style jsx>{`
         .btn {
+          position: relative;
           display: block;
           padding: ${padding};
           font-size: ${fontSize};
@@ -81,6 +90,23 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
 
         .btn::-moz-focus-inner {
           border: 0;
+        }
+
+        .btn span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 ${!icon ? "0" : "20px"};
+        }
+
+        .btn span :global(svg) {
+          position: absolute;
+          left: ${iconSide == "right" ? "unset" : "15px"};
+          right: ${iconSide == "right" ? "15px" : "unset"};
+          height: 15px;
+          width: 15px;
+          margin-${iconSide == "right" ? "left" : "right"}: 10px;
+          opacity: 0.5;
         }
       `}</style>
     </button>

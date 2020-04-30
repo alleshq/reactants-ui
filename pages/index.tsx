@@ -1,3 +1,4 @@
+import { Trash2 } from "react-feather";
 import { useTheme, Button, Input } from "../components";
 
 export default () => {
@@ -8,50 +9,37 @@ export default () => {
       <article>
         <h3>Buttons</h3>
         <div>
-          <Button onClick={() => console.log("Clicked")}>Default</Button>
+          <Button>Default</Button>
 
           <h4>Colors</h4>
 
-          <Button type="primary" onClick={() => console.log("Clicked")}>
-            Primary
-          </Button>
-
-          <Button type="danger" onClick={() => console.log("Clicked")}>
-            Danger
-          </Button>
+          <Button type="primary">Primary</Button>
+          <Button type="danger">Danger</Button>
 
           <h4>States</h4>
 
-          <Button disabled onClick={() => console.log("Clicked")}>
-            Disabled
-          </Button>
+          <Button disabled>Disabled</Button>
 
           <h4>Sizes</h4>
 
-          <Button size="small" onClick={() => console.log("Clicked")}>
-            Small
-          </Button>
-
-          <Button size="medium" onClick={() => console.log("Clicked")}>
-            Medium
-          </Button>
-
-          <Button size="large" onClick={() => console.log("Clicked")}>
-            Large
-          </Button>
+          <Button size="small">Small</Button>
+          <Button size="medium">Medium</Button>
+          <Button size="large">Large</Button>
 
           <h4>Custom Width</h4>
 
-          <Button width="25%" onClick={() => console.log("Clicked")}>
-            Width: 25%
+          <Button width="25%">Width: 25%</Button>
+          <Button width="50%">Width: 50%</Button>
+          <Button width="100%">Width: 100%</Button>
+
+          <h4>Icon</h4>
+
+          <Button icon={<Trash2 />} size="large">
+            Delete
           </Button>
 
-          <Button width="50%" onClick={() => console.log("Clicked")}>
-            Width: 50%
-          </Button>
-
-          <Button width="100%" onClick={() => console.log("Clicked")}>
-            Width: 100%
+          <Button icon={<Trash2 />} size="large" iconSide="right">
+            Delete
           </Button>
         </div>
       </article>
