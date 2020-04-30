@@ -21,7 +21,7 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   className,
   ...props
 }) => {
-  const { palette, type } = useTheme();
+  const { palette } = useTheme();
   const cardRef = useRef<HTMLDivElement>(null);
 
   return (
