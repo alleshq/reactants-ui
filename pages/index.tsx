@@ -28,7 +28,7 @@ export default () => {
 
           <h4>Custom Width</h4>
 
-          <Button width="25%">Width: 25%</Button>
+          <Button width={100}>Width: 100px</Button>
           <Button width="50%">Width: 50%</Button>
           <Button width="100%">Width: 100%</Button>
 
@@ -53,7 +53,7 @@ export default () => {
           <Input type="danger" placeholder="Danger" />
 
           <h4>Custom Width</h4>
-          <Input placeholder="Width: 25%" width="25%" />
+          <Input placeholder="Width: 100px" width={100} />
           <Input placeholder="Width: 50%" width="50%" />
           <Input placeholder="Width: 100%" width="100%" />
         </div>

@@ -7,7 +7,7 @@ import { getButtonColors, getButtonSize } from "./styles";
 interface Props {
   type?: ButtonTypes;
   size?: NormalSizes;
-  width?: string;
+  width?: number | string;
   icon?: React.ReactNode;
   iconSide?: NormalSides;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -17,7 +17,7 @@ interface Props {
 const defaultProps = {
   type: "default" as ButtonTypes,
   size: "medium" as NormalSizes,
-  width: "auto",
+  width: "auto" as number | string,
   iconSide: "left" as NormalSides,
   disabled: false,
   className: "",

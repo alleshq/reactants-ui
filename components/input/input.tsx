@@ -6,13 +6,13 @@ import { getInputColors } from "./styles";
 
 interface Props {
   type?: InputTypes;
-  width?: string;
+  width?: number | string;
   className?: string;
 }
 
 const defaultProps = {
   type: "default" as InputTypes,
-  width: "auto",
+  width: "auto" as number | string,
   className: "",
 };
 
