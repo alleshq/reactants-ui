@@ -1,12 +1,13 @@
 import { Coffee } from "react-feather";
 import { useTheme, Button, Input, Card, Avatar } from "../components";
+import Layout from "../lib/layout";
 
 export default () => {
   const theme = useTheme();
   const avatar = "https://github.com/identicons/danteissaias.png";
 
   return (
-    <main>
+    <Layout>
       <h3>Buttons</h3>
 
       <Card header="Colors">
@@ -101,6 +102,6 @@ export default () => {
           justify-items: start;
         }
       `}</style>
-    </main>
+    </Layout>
   );
 };
