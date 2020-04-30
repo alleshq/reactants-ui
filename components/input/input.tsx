@@ -79,6 +79,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
           display: inline-block;
           margin-bottom: 10px;
           font-weight: 500;
+          font-size: 0.875em;
         }
       `}</style>
     </div>
