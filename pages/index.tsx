@@ -7,7 +7,13 @@ export default () => {
   const avatar = "https://github.com/identicons/danteissaias.png";
 
   return (
-    <Layout>
+    <Layout
+      style={{
+        padding: "0 25px 50px",
+        maxWidth: "800px",
+        margin: "0 auto",
+      }}
+    >
       <h3>Buttons</h3>
 
       <Card header="Colors">
@@ -83,12 +89,6 @@ export default () => {
       <style jsx>{`
         h3 {
           margin: 45px 0 25px;
-        }
-
-        main {
-          padding: 0 25px 50px;
-          max-width: 800px;
-          margin: 0 auto;
         }
 
         :global(.card) {
