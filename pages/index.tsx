@@ -1,12 +1,12 @@
 import { Trash2 } from "react-feather";
-import { useTheme, Button, Input } from "../components";
+import { useTheme, Button, Input, Card } from "../components";
 
 export default () => {
   const theme = useTheme();
 
   return (
     <main>
-      <article>
+      <Card className="section">
         <h3>Buttons</h3>
         <div>
           <Button>Default</Button>
@@ -42,9 +42,9 @@ export default () => {
             Delete
           </Button>
         </div>
-      </article>
+      </Card>
 
-      <article>
+      <Card className="section">
         <h3>Inputs</h3>
         <div>
           <Input placeholder="Default" />
@@ -57,7 +57,7 @@ export default () => {
           <Input placeholder="Width: 50%" width="50%" />
           <Input placeholder="Width: 100%" width="100%" />
         </div>
-      </article>
+      </Card>
 
       <style jsx>{`
         h3 {
@@ -77,14 +77,12 @@ export default () => {
           margin: 0 auto;
         }
 
-        article {
-          border: 1px solid ${theme.type == "dark" ? "#333" : "#eee"};
+        :global(.section) {
           padding: 20px 45px 40px;
-          border-radius: 5px;
           margin: 30px 0;
         }
 
-        article > div {
+        :global(.section) > div {
           width: 100%;
           display: inline-grid;
           gap: 15px;
