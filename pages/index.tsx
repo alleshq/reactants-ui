@@ -16,6 +16,9 @@ export default () => {
 
       <Card header="States">
         <Button disabled>Disabled</Button>
+        <Button disabled type="primary">
+          Disabled Primary
+        </Button>
       </Card>
 
       <Card header="Sizes">

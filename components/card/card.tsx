@@ -21,7 +21,7 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   className,
   ...props
 }) => {
-  const theme = useTheme();
+  const { palette, type } = useTheme();
   const cardRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -30,14 +30,16 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
       <div className="content">{children}</div>
       <style jsx>{`
         .card {
-          border: 1px solid ${theme.palette.foreground}22;
+          border: 1px solid ${palette.foreground}22;
           border-radius: 5px;
         }
 
         .header {
-          background: ${theme.palette.foreground}05;
-          border-bottom: 1px solid ${theme.palette.foreground}22;
-          color: ${theme.palette.foreground}99;
+          background: ${type == "dark"
+            ? `${palette.foreground}0a`
+            : `${palette.foreground}05`};
+          border-bottom: 1px solid ${palette.foreground}22;
+          color: ${palette.foreground}99;
           width: calc(100% - 30px);
           padding: 10px 15px;
           font-size: 0.9em;
