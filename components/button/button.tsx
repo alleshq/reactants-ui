@@ -19,7 +19,7 @@ const Button: React.FC<Props> = memo<Props>(
     type = "default",
     size = "medium",
     onClick,
-    className,
+    className = "",
     width = "auto",
     icon,
     iconRight = false,
@@ -30,13 +30,13 @@ const Button: React.FC<Props> = memo<Props>(
     const buttonRef = useRef<HTMLButtonElement>(null);
     const colors = useMemo(() => getButtonColors(theme, type), [theme, type]);
     const sizes = useMemo(() => getButtonSize(size), [size]);
+    if (typeof width == "number") width = `${width}px`;
 
     return (
       <button
         ref={buttonRef}
         className={`btn ${className}`}
         onClick={onClick}
-        style={{ width }}
         {...props}
       >
         <span className="btn-content">
@@ -60,6 +60,7 @@ const Button: React.FC<Props> = memo<Props>(
           font-family: ${theme.font.sans};
           font-weight: 500;
           outline: none;
+          width: ${width};
         }
 
         .btn:disabled {
@@ -85,6 +86,7 @@ const Button: React.FC<Props> = memo<Props>(
           align-items: center;
           justify-content: center;
           padding: 0 ${!icon ? "0" : "20px"};
+          width: 100%;
         }
 
         .btn-content :global(svg) {
