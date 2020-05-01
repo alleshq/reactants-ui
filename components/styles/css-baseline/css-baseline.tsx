@@ -18,6 +18,12 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           color: ${theme.palette.foreground};
         }
 
+        html,
+        body,
+        #__next {
+          height: 100%;
+        }
+
         html {
           font-size: 16px;
         }
@@ -30,7 +36,6 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           line-height: 1.5;
           margin: 0;
           padding: 0;
-          min-height: 100%;
           position: relative;
           overflow-x: hidden;
           font-family: ${theme.font.sans};

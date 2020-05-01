@@ -7,7 +7,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Card: React.FC<Props> = memo<Props>(
-  ({ header, className, children, ...props }) => {
+  ({ header, className = "", children, ...props }) => {
     const theme = useTheme();
     const cardRef = useRef<HTMLDivElement>(null);
 
@@ -29,7 +29,6 @@ const Card: React.FC<Props> = memo<Props>(
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             color: ${theme.palette.grey5};
-            width: calc(100% - 30px);
             padding: 10px 15px;
             font-size: 0.9em;
             font-weight: 400;
@@ -38,7 +37,6 @@ const Card: React.FC<Props> = memo<Props>(
 
           .card-content {
             padding: 25px;
-            width: calc(100% - 50px);
           }
         `}</style>
       </div>
