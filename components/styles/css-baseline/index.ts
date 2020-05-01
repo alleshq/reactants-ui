@@ -1,1 +1,1 @@
-export { default } from "./css-baseline";
+export { MemoCSSBaseline as CSSBaseline } from "./css-baseline";

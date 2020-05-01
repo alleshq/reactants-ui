@@ -94,9 +94,7 @@ type MemoCssBaselineComponent<P = {}> = React.NamedExoticComponent<P> & {
   flush: typeof flushToReact;
 };
 
-const MemoCSSBaseline = React.memo(CSSBaseline) as MemoCssBaselineComponent<
-  React.PropsWithChildren<{}>
->;
+export const MemoCSSBaseline = React.memo(
+  CSSBaseline
+) as MemoCssBaselineComponent<React.PropsWithChildren<{}>>;
 MemoCSSBaseline.flush = flush;
-
-export default MemoCSSBaseline;
