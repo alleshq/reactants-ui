@@ -3,7 +3,7 @@ import {
   useTheme,
   Button,
   Input,
-  Card,
+  Box,
   Avatar,
   Row,
   Col,
@@ -26,16 +26,16 @@ export default () => {
     >
       <h3>Layout</h3>
 
-      <Card header="Rows">
+      <Box>
         <Row style={{ marginBottom: 10 }}>
           <ExampleBlock />
         </Row>
         <Row>
           <ExampleBlock />
         </Row>
-      </Card>
+      </Box>
 
-      <Card header="Columns">
+      <Box>
         <Row style={{ marginBottom: "15px" }}>
           <Col>
             <ExampleBlock plain={2} />
@@ -52,9 +52,9 @@ export default () => {
             <ExampleBlock plain={4} />
           </Col>
         </Row>
-      </Card>
+      </Box>
 
-      <Card header="Gaps">
+      <Box>
         <Row gap={0.8} style={{ marginBottom: "15px" }}>
           <Col>
             <ExampleBlock />
@@ -74,43 +74,43 @@ export default () => {
             <ExampleBlock />
           </Col>
         </Row>
-      </Card>
+      </Box>
 
       <h3>Buttons</h3>
 
-      <Card header="Colors">
+      <Box>
         <Button>Default</Button>
         <Spacer y={0.5} />
         <Button type="primary">Primary</Button>
         <Spacer y={0.5} />
         <Button type="danger">Danger</Button>
-      </Card>
+      </Box>
 
-      <Card header="States">
+      <Box>
         <Button disabled>Disabled</Button>
         <Spacer y={0.5} />
         <Button disabled type="primary">
           Disabled Primary
         </Button>
-      </Card>
+      </Box>
 
-      <Card header="Sizes">
+      <Box>
         <Button size="small">Small</Button>
         <Spacer y={0.5} />
         <Button size="medium">Medium</Button>
         <Spacer y={0.5} />
         <Button size="large">Large</Button>
-      </Card>
+      </Box>
 
-      <Card header="Custom Width">
+      <Box>
         <Button width={200}>Width: 200px</Button>
         <Spacer y={0.5} />
         <Button width="50%">Width: 50%</Button>
         <Spacer y={0.5} />
         <Button width="100%">Width: 100%</Button>
-      </Card>
+      </Box>
 
-      <Card header="Icon">
+      <Box>
         <Button icon={<Coffee />} size="large">
           Icon
         </Button>
@@ -118,11 +118,11 @@ export default () => {
         <Button icon={<Coffee />} size="large" iconRight>
           Icon
         </Button>
-      </Card>
+      </Box>
 
       <h3>Inputs</h3>
 
-      <Card header="States">
+      <Box>
         <Input placeholder="Default" />
         <Spacer y={0.5} />
         <Input disabled placeholder="Disabled" />
@@ -130,37 +130,37 @@ export default () => {
         <Input errored placeholder="Danger" />
         <Spacer y={0.5} />
         <Input readOnly placeholder="Ready Only" initialValue="Ready Only" />
-      </Card>
+      </Box>
 
-      <Card header="Custom Width">
+      <Box>
         <Input placeholder="Width: 200px" width={200} />
         <Spacer y={0.5} />
         <Input placeholder="Width: 50%" width="50%" />
         <Spacer y={0.5} />
         <Input placeholder="Width: 100%" width="100%" />
-      </Card>
+      </Box>
 
-      <Card header="Labels">
+      <Box>
         <Input placeholder="Placeholder" label="Label" />
-      </Card>
+      </Box>
 
       <h3>Avatar</h3>
 
-      <Card header="Sizes">
+      <Box>
         <Row align="bottom">
           <Avatar src={avatar} />
           <Avatar src={avatar} size={60} />
           <Avatar src={avatar} size={40} />
           <Avatar src={avatar} size={20} />
         </Row>
-      </Card>
+      </Box>
 
       <style jsx>{`
         h3 {
           margin: 45px 0 25px;
         }
 
-        :global(.card) {
+        :global(.box) {
           margin: 10px 0;
           width: 100%;
         }
