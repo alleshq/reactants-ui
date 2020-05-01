@@ -1,5 +1,5 @@
 import React, { useMemo, memo } from "react";
-import useTheme from "../components/styles/use-theme";
+import { useTheme } from "../components/styles/use-theme";
 import { ReactantsThemes } from "../components/styles/themes";
 
 interface Props {

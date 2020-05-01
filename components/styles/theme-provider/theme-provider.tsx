@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import useTheme from "../use-theme";
+import { useTheme } from "../use-theme";
 import lightTheme from "../themes/default";
 import { ReactantsThemes } from "../themes";
 import darkTheme from "../themes/dark";

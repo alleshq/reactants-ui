@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from "react";
-import useTheme from "../styles/use-theme";
+import { useTheme } from "../styles/use-theme";
 
 type Justify = "start" | "end" | "center" | "space-around" | "space-between";
 type Align = "top" | "middle" | "bottom";
@@ -29,7 +29,7 @@ const getFlexAlignment = (justify: Justify, align: Align) => {
   };
 };
 
-const Row: React.FC<Props> = memo<Props>(
+export const Row: React.FC<Props> = memo<Props>(
   ({
     gap = 0,
     justify = "start",
@@ -65,5 +65,3 @@ const Row: React.FC<Props> = memo<Props>(
     );
   }
 );
-
-export default Row;

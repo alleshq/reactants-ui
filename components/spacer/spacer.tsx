@@ -14,7 +14,7 @@ const getMargin = (num: number): string => {
   return `calc(${num * 15.25}pt + 1px * ${num - 1})`;
 };
 
-const Spacer: React.FC<Props> = memo<Props>(
+export const Spacer: React.FC<Props> = memo<Props>(
   ({ x = 1, y = 1, className = "", ...props }) => {
     const left = getMargin(x);
     const top = getMargin(y);
@@ -34,5 +34,3 @@ const Spacer: React.FC<Props> = memo<Props>(
     );
   }
 );
-
-export default Spacer;

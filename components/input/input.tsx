@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
-import useTheme from "../styles/use-theme";
+import { useTheme } from "../styles/use-theme";
 import { getInputColors } from "./styles";
 
 interface Props extends React.HTMLAttributes<HTMLInputElement> {
@@ -16,7 +16,7 @@ interface Props extends React.HTMLAttributes<HTMLInputElement> {
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
-const Input: React.FC<Props> = ({
+export const Input: React.FC<Props> = ({
   value,
   initialValue = "",
   width = "auto",
@@ -105,5 +105,3 @@ const Input: React.FC<Props> = ({
     </div>
   );
 };
-
-export default Input;

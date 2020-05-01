@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, memo } from "react";
-import useTheme from "../styles/use-theme";
+import { useTheme } from "../styles/use-theme";
 import useCurrentState from "../utils/use-current-state";
 
 interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
@@ -8,7 +8,7 @@ interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
   className?: string;
 }
 
-const Header: React.FC<Props> = memo<Props>(
+export const Header: React.FC<Props> = memo<Props>(
   ({ children, title, fixed, className = "", ...props }) => {
     const theme = useTheme();
     const headerRef = useRef<HTMLHeadingElement>(null);
@@ -75,5 +75,3 @@ const Header: React.FC<Props> = memo<Props>(
     );
   }
 );
-
-export default Header;

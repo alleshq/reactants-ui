@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, memo } from "react";
-import useTheme from "../styles/use-theme";
+import { useTheme } from "../styles/use-theme";
 
 interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   src?: string;
@@ -7,7 +7,7 @@ interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
 }
 
-const Avatar: React.FC<Props> = memo<Props>(
+export const Avatar: React.FC<Props> = memo<Props>(
   ({ src, size = 80, className, ...props }) => {
     const theme = useTheme();
     const [ready, setReady] = useState(false);
@@ -55,5 +55,3 @@ const Avatar: React.FC<Props> = memo<Props>(
     );
   }
 );
-
-export default Avatar;

@@ -7,7 +7,7 @@ interface Props extends React.HTMLAttributes<any> {
   className?: string;
 }
 
-const Col: React.FC<Props> = memo<Props>(
+export const Col: React.FC<Props> = memo<Props>(
   ({
     span = 24,
     offset = 0,
@@ -35,5 +35,3 @@ const Col: React.FC<Props> = memo<Props>(
     );
   }
 );
-
-export default Col;

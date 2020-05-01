@@ -1,12 +1,12 @@
 import React, { useRef, memo } from "react";
-import useTheme from "../styles/use-theme";
+import { useTheme } from "../styles/use-theme";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   header?: string | React.ReactNode;
   className?: string;
 }
 
-const Card: React.FC<Props> = memo<Props>(
+export const Card: React.FC<Props> = memo<Props>(
   ({ header, className = "", children, ...props }) => {
     const theme = useTheme();
     const cardRef = useRef<HTMLDivElement>(null);
@@ -43,5 +43,3 @@ const Card: React.FC<Props> = memo<Props>(
     );
   }
 );
-
-export default Card;

@@ -1,5 +1,5 @@
 import React, { useRef, useMemo, memo } from "react";
-import useTheme from "../styles/use-theme";
+import { useTheme } from "../styles/use-theme";
 import { ButtonTypes, NormalSizes } from "../utils/prop-types";
 import { getButtonColors, getButtonSize } from "./styles";
 
@@ -14,7 +14,7 @@ interface Props
   className?: string;
 }
 
-const Button: React.FC<Props> = memo<Props>(
+export const Button: React.FC<Props> = memo<Props>(
   ({
     type = "default",
     size = "medium",
@@ -103,5 +103,3 @@ const Button: React.FC<Props> = memo<Props>(
     );
   }
 );
-
-export default Button;

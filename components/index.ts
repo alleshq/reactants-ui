@@ -1,14 +1,14 @@
 /// <reference types="styled-jsx" />
 
 export * from "./styles/themes";
-export { default as useTheme } from "./styles/use-theme";
-export { default as CSSBaseline } from "./styles/css-baseline";
-export { default as Avatar } from "./avatar";
-export { default as Button } from "./button";
-export { default as Card } from "./card";
-export { default as Input } from "./input";
-export { default as Header } from "./header";
-export { default as Row } from "./row";
-export { default as Col } from "./col";
-export { default as Spacer } from "./spacer";
-export { default as ReactantsProvider } from "./providers/reactants-providet";
+export * from "./styles/use-theme";
+export * from "./styles/css-baseline";
+export * from "./avatar";
+export * from "./button";
+export * from "./card";
+export * from "./input";
+export * from "./header";
+export * from "./row";
+export * from "./col";
+export * from "./spacer";
+export * from "./providers/reactants-providet";
