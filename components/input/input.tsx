@@ -1,12 +1,14 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useTheme } from "../styles/use-theme";
 import { getInputColors } from "./styles";
+import { Spacer } from "../spacer";
 
 interface Props extends React.HTMLAttributes<HTMLInputElement> {
   value?: string;
   initialValue?: string;
   width?: number | string;
   errored?: boolean;
+  error?: string;
   disabled?: boolean;
   readOnly?: boolean;
   label?: string;
@@ -21,6 +23,7 @@ export const Input: React.FC<Props> = ({
   initialValue = "",
   width = "auto",
   errored = false,
+  error,
   disabled,
   readOnly,
   label,
@@ -66,6 +69,8 @@ export const Input: React.FC<Props> = ({
         {...props}
       />
 
+      {error && <span style={{ opacity: errored ? 1 : 0 }}>{error}</span>}
+
       <style jsx>{`
         .input-container {
           width: ${width};
@@ -100,6 +105,13 @@ export const Input: React.FC<Props> = ({
           margin-bottom: 10px;
           font-weight: 500;
           font-size: 0.875em;
+        }
+
+        span {
+          color: ${theme.palette.danger};
+          font-size: 0.85em;
+          margin: 10px 0;
+          transition: opacity 0.2s ease;
         }
       `}</style>
     </div>

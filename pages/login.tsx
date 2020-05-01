@@ -30,14 +30,16 @@ export default () => {
                 label="Email"
                 placeholder="gilfoyle@piedpiper.com"
                 errored={errored}
+                error="Invalid email address"
               />
 
-              <Spacer y={1} />
+              <Spacer y={0.5} />
 
               <Input
                 label="Password"
                 placeholder="********"
                 errored={errored}
+                error="Invalid password"
               />
 
               <Spacer y={1} />
