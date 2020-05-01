@@ -41,9 +41,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
         </Button>
       </Header>
 
-      <div style={{ paddingTop: 55 }}>
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </ReactantsProvider>
   );
 };

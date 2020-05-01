@@ -33,16 +33,18 @@ const Header: React.FC<Props> = memo<Props>(
         className={`header ${className} ${extraClasses}`}
         {...props}
       >
-        <h4 className="header-title">{title}</h4>
-        <div className="header-actions">{children}</div>
+        <nav>
+          <h4 className="header-title">{title}</h4>
+          <div className="header-actions">{children}</div>
+        </nav>
 
         <style jsx>{`
           .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            position: sticky;
+            top: 0;
             height: 60px;
-            background-color: ${theme.palette.background};
+            background-color: ${theme.palette.background}dd;
+            backdrop-filter: saturate(180%) blur(5px);
             border-bottom: 1px solid ${theme.palette.grey2};
             z-index: 999;
             padding: 0 20px;
@@ -50,15 +52,13 @@ const Header: React.FC<Props> = memo<Props>(
             transition: box-shadow 0.2s ease;
           }
 
-          .header.shadow {
-            box-shadow: rgba(0, 0, 0, 0.1) 0 0 15px 0;
-          }
-
-          .header.fixed {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+          nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1000px;
+            margin: 0 auto;
+            height: 100%;
           }
 
           .header-title {
