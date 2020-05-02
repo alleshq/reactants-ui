@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
+import Link from "next/link";
 import {
   ReactantsThemes,
   ReactantsProvider,
@@ -25,7 +26,14 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   return (
     <ReactantsProvider theme={customTheme}>
       <CSSBaseline />
-      <Header title="Reactants" fixed>
+      <Header
+        fixed
+        logo={
+          <Link href="/" passHref>
+            <a style={{ color: "white", textDecoration: "none" }}>Reactants</a>
+          </Link>
+        }
+      >
         <Button
           size="small"
           className="toggle"

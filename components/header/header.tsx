@@ -2,13 +2,13 @@ import React, { useRef, useEffect, memo, useState } from "react";
 import { useTheme } from "../styles/use-theme";
 
 interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
-  title?: string;
+  logo?: React.ReactNode;
   fixed?: boolean;
   className?: string;
 }
 
 export const Header: React.FC<Props> = memo<Props>(
-  ({ children, title, fixed, className = "", ...props }) => {
+  ({ children, logo, fixed, className = "", ...props }) => {
     const theme = useTheme();
     const headerRef = useRef<HTMLHeadingElement>(null);
     const [shadow, setShadow] = useState<boolean>(false);
@@ -33,7 +33,7 @@ export const Header: React.FC<Props> = memo<Props>(
         {...props}
       >
         <nav>
-          <h4 className="header-title">{title}</h4>
+          <h4 className="header-title">{logo}</h4>
           <div className="header-actions">{children}</div>
         </nav>
 
