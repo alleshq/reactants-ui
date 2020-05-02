@@ -1,14 +1,6 @@
 import { useState } from "react";
 import Layout from "../lib/layout";
-import {
-  Row,
-  Box,
-  Input,
-  Spacer,
-  Button,
-  BoxHeader,
-  BoxContent,
-} from "../components";
+import { Row, Box, Input, Spacer, Button } from "../components";
 
 export default () => {
   const [errored, setErrored] = useState<boolean>(false);
@@ -24,8 +16,8 @@ export default () => {
           <h2 style={{ textAlign: "center" }}>Log In</h2>
 
           <Box>
-            <BoxHeader>Enter your credentials to continue</BoxHeader>
-            <BoxContent as="form" onSubmit={handleSubmit} padding="20px 25px">
+            <Box.Header>Enter your credentials to continue</Box.Header>
+            <Box.Content as="form" onSubmit={handleSubmit} padding="20px 25px">
               <Input
                 label="Email"
                 placeholder="gilfoyle@piedpiper.com"
@@ -49,7 +41,7 @@ export default () => {
               </Button>
 
               <Spacer y={0.5} />
-            </BoxContent>
+            </Box.Content>
           </Box>
         </div>
       </Row>
