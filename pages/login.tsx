@@ -12,7 +12,7 @@ export default () => {
   return (
     <Layout style={{ height: "inherit" }}>
       <Row align="middle" justify="center" style={{ height: "inherit" }}>
-        <div style={{ width: "100%", maxWidth: "450px" }}>
+        <div style={{ width: "100%", maxWidth: "375px" }}>
           <h2 style={{ textAlign: "center" }}>Log In</h2>
 
           <Box>
