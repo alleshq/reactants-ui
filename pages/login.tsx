@@ -25,7 +25,7 @@ export default () => {
 
           <Box>
             <BoxHeader>Enter your credentials to continue</BoxHeader>
-            <BoxContent as="form" onSubmit={handleSubmit}>
+            <BoxContent as="form" onSubmit={handleSubmit} padding="20px 25px">
               <Input
                 label="Email"
                 placeholder="gilfoyle@piedpiper.com"
@@ -47,6 +47,8 @@ export default () => {
               <Button width="100%" type="primary">
                 Log in
               </Button>
+
+              <Spacer y={0.5} />
             </BoxContent>
           </Box>
         </div>

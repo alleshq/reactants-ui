@@ -27,7 +27,7 @@ export const Input: React.FC<Props> = ({
   disabled,
   readOnly,
   label,
-  className,
+  className = "",
   onChange,
   onFocus,
   onBlur,
@@ -110,7 +110,6 @@ export const Input: React.FC<Props> = ({
         span {
           color: ${theme.palette.danger};
           font-size: 0.85em;
-          margin: 10px 0;
           transition: opacity 0.2s ease;
         }
       `}</style>
