@@ -2,6 +2,7 @@ import React, { useRef, useMemo, memo } from "react";
 import { useTheme } from "../styles/use-theme";
 import { ButtonTypes, NormalSizes } from "../utils/prop-types";
 import { getButtonColors, getButtonSize } from "./styles";
+import { Loading } from "../loading";
 
 interface Props
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
@@ -10,6 +11,7 @@ interface Props
   width?: number | string;
   icon?: React.ReactNode;
   iconRight?: boolean;
+  loading?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
 }
@@ -23,6 +25,7 @@ export const Button: React.FC<Props> = memo<Props>(
     width = "auto",
     icon,
     iconRight = false,
+    loading = false,
     children,
     ...props
   }) => {
@@ -37,11 +40,12 @@ export const Button: React.FC<Props> = memo<Props>(
         ref={buttonRef}
         className={`btn ${className}`}
         onClick={onClick}
+        disabled={props.disabled || loading}
         {...props}
       >
         <span className="btn-content">
           {icon}
-          {children}
+          {loading ? <Loading /> : children}
         </span>
 
         <style jsx>{`
@@ -53,27 +57,31 @@ export const Button: React.FC<Props> = memo<Props>(
           box-sizing: border-box;
           background-color: ${colors.bg};
           color: ${colors.fg};
-          cursor: pointer;
           border: 1px solid ${colors.border};
           border-radius: ${theme.layout.radius};
-          transition: opacity 0.2s ease;
+          transition: opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
           font-family: ${theme.font.sans};
           font-weight: 500;
           outline: none;
           width: ${width};
+          height: ${sizes.height};
+          min-width: ${sizes.minWidth};
+          user-select: none;
+          cursor: pointer;
         }
 
         .btn:disabled {
-          opacity: 0.6;
-          cursor: unset;
-          pointer-events: none;
+          background: ${theme.palette.grey1};
+          border-color: ${theme.palette.grey2};
+          color: ${theme.palette.grey5};
+          cursor: not-allowed;
         }
 
-        .btn:hover {
+        .btn:hover:enabled {
           opacity: 0.8;
         }
 
-        .btn:active {
+        .btn:active:enabled {
           opacity: 0.5;
         }
 

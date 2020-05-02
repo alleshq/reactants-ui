@@ -94,9 +94,7 @@ export default () => {
         <Box.Content>
           <Button disabled>Disabled</Button>
           <Spacer y={0.5} />
-          <Button disabled type="primary">
-            Disabled Primary
-          </Button>
+          <Button loading>Log in</Button>
         </Box.Content>
       </Box>
 

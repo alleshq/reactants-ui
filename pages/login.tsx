@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import Layout from "../lib/layout";
 import { Row, Box, Input, Spacer, Button } from "../components";
+import { Loading } from "../components/loading";
 
 export default () => {
   const [errored, setErrored] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const handleSubmit = (e: React.FormEvent) => {
+    setLoading(true);
     e.preventDefault();
-    setErrored(true);
+
+    setTimeout(() => {
+      setErrored(true);
+      setLoading(false);
+    }, 500);
   };
 
   return (
@@ -40,8 +47,8 @@ export default () => {
 
               <Spacer y={1} />
 
-              <Button width="100%" type="primary">
-                Log in
+              <Button loading={loading} width="100%" type="primary">
+                Log In
               </Button>
 
               <Spacer y={0.5} />

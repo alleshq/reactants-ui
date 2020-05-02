@@ -36,25 +36,33 @@ export const getButtonColors = (
 export interface ButtonSizeGroup {
   padding: string;
   font: string;
+  height: string;
+  minWidth: string;
 }
 
 export const getButtonSize = (
   size: NormalSizes = "medium"
 ): ButtonSizeGroup => {
   const defaultLayout = {
-    padding: "10.5px 30px",
+    padding: "0 30px",
     font: "0.83em",
+    height: "2.5rem",
+    minWidth: "8rem",
   };
 
   const layouts: { [key in NormalSizes]: ButtonSizeGroup } = {
     small: {
-      padding: "5px 20px",
+      padding: "0 20px",
       font: "0.8em",
+      height: "1.5rem",
+      minWidth: "4rem",
     },
     medium: defaultLayout,
     large: {
-      padding: "11.5px 40px",
+      padding: "0 40px",
       font: "0.925em",
+      height: "3rem",
+      minWidth: "12rem",
     },
   };
 

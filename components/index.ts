@@ -11,4 +11,5 @@ export * from "./header";
 export * from "./row";
 export * from "./col";
 export * from "./spacer";
+export * from "./loading";
 export * from "./providers/reactants-providet";
