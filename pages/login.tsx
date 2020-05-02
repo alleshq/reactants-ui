@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Mail, Eye } from "react-feather";
 import Layout from "../lib/layout";
 import { Row, Box, Input, Spacer, Button } from "../components";
 
