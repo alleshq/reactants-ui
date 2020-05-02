@@ -42,7 +42,7 @@ export const getButtonSize = (
   size: NormalSizes = "medium"
 ): ButtonSizeGroup => {
   const defaultLayout = {
-    padding: "9.5px 30px",
+    padding: "10.5px 30px",
     font: "0.83em",
   };
 
