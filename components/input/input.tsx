@@ -92,9 +92,7 @@ const Input: React.FC<Props> = ({
           )}
 
           <input
-            className={`${icon ? "left-icon" : ""} ${
-              iconRight ? "right-icon" : ""
-            }`}
+            className={`${icon ? "left-icon" : iconRight ? "icon-right" : ""}`}
             disabled={disabled}
             placeholder={placeholder}
             value={selfValue}
