@@ -21,7 +21,7 @@ const getBackground = (theme: ReactantsThemes, plain: number | boolean) => {
 };
 
 const ExampleBlock: React.FC<Props> = memo<Props>(
-  ({ plain, children, ...props }) => {
+  ({ plain = false, children, ...props }) => {
     const theme = useTheme();
     const bg = useMemo(() => getBackground(theme, plain), [theme, plain]);
 

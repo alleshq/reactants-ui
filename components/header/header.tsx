@@ -1,6 +1,5 @@
-import React, { useRef, useEffect, memo } from "react";
+import React, { useRef, useEffect, memo, useState } from "react";
 import { useTheme } from "../styles/use-theme";
-import useCurrentState from "../utils/use-current-state";
 
 interface Props extends React.HTMLAttributes<HTMLHeadingElement> {
   title?: string;
@@ -12,12 +11,12 @@ export const Header: React.FC<Props> = memo<Props>(
   ({ children, title, fixed, className = "", ...props }) => {
     const theme = useTheme();
     const headerRef = useRef<HTMLHeadingElement>(null);
-    const [shadow, setShadow, shadowRef] = useCurrentState<boolean>(false);
+    const [shadow, setShadow] = useState<boolean>(false);
 
     useEffect(() => {
       const scrollHandler = () => {
         const shouldShadow = document.documentElement.scrollTop > 60;
-        if (shouldShadow === shadowRef.current) return;
+        if (shouldShadow === shadow) return;
         setShadow(shouldShadow);
       };
 

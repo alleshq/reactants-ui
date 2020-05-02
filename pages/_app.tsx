@@ -12,7 +12,7 @@ import {
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   const [customTheme, setCustomTheme] = useState<Partial<ReactantsThemes>>({});
   const themeChangeHandle = (theme: Partial<ReactantsThemes>) => {
-    window.localStorage.setItem("theme", theme.type);
+    window.localStorage.setItem("theme", theme.type ?? "light");
     setCustomTheme(theme);
   };
 
