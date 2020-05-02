@@ -12,138 +12,174 @@ export default () => {
       style={{
         padding: "0 25px 50px",
         maxWidth: "800px",
-        margin: "0 auto",
+        margin: "80px auto 0",
       }}
     >
       <h3>Layout</h3>
 
       <Box>
-        <Row style={{ marginBottom: 10 }}>
-          <ExampleBlock />
-        </Row>
-        <Row>
-          <ExampleBlock />
-        </Row>
+        <Box.Header>Rows</Box.Header>
+        <Box.Content>
+          <Row style={{ marginBottom: 10 }}>
+            <ExampleBlock />
+          </Row>
+          <Row>
+            <ExampleBlock />
+          </Row>
+        </Box.Content>
       </Box>
 
       <Box>
-        <Row style={{ marginBottom: "15px" }}>
-          <Col>
-            <ExampleBlock plain={2} />
-          </Col>
-          <Col>
-            <ExampleBlock plain={4} />
-          </Col>
-        </Row>
-        <Row>
-          <Col span={8}>
-            <ExampleBlock plain={2} />
-          </Col>
-          <Col>
-            <ExampleBlock plain={4} />
-          </Col>
-        </Row>
+        <Box.Header>Columns</Box.Header>
+        <Box.Content>
+          <Row style={{ marginBottom: "15px" }}>
+            <Col>
+              <ExampleBlock plain={2} />
+            </Col>
+            <Col>
+              <ExampleBlock plain={4} />
+            </Col>
+          </Row>
+          <Row>
+            <Col span={8}>
+              <ExampleBlock plain={2} />
+            </Col>
+            <Col>
+              <ExampleBlock plain={4} />
+            </Col>
+          </Row>
+        </Box.Content>
       </Box>
 
       <Box>
-        <Row gap={0.8} style={{ marginBottom: "15px" }}>
-          <Col>
-            <ExampleBlock />
-          </Col>
-          <Col>
-            <ExampleBlock />
-          </Col>
-          <Col>
-            <ExampleBlock />
-          </Col>
-        </Row>
-        <Row gap={0.8}>
-          <Col>
-            <ExampleBlock />
-          </Col>
-          <Col>
-            <ExampleBlock />
-          </Col>
-        </Row>
+        <Box.Header>Gaps</Box.Header>
+        <Box.Content>
+          <Row gap={0.8} style={{ marginBottom: "15px" }}>
+            <Col>
+              <ExampleBlock />
+            </Col>
+            <Col>
+              <ExampleBlock />
+            </Col>
+            <Col>
+              <ExampleBlock />
+            </Col>
+          </Row>
+          <Row gap={0.8}>
+            <Col>
+              <ExampleBlock />
+            </Col>
+            <Col>
+              <ExampleBlock />
+            </Col>
+          </Row>
+        </Box.Content>
       </Box>
 
       <h3>Buttons</h3>
 
       <Box>
-        <Button>Default</Button>
-        <Spacer y={0.5} />
-        <Button type="primary">Primary</Button>
-        <Spacer y={0.5} />
-        <Button type="danger">Danger</Button>
+        <Box.Header>Colors</Box.Header>
+        <Box.Content>
+          <Button>Default</Button>
+          <Spacer y={0.5} />
+          <Button type="primary">Primary</Button>
+          <Spacer y={0.5} />
+          <Button type="danger">Danger</Button>
+        </Box.Content>
       </Box>
 
       <Box>
-        <Button disabled>Disabled</Button>
-        <Spacer y={0.5} />
-        <Button disabled type="primary">
-          Disabled Primary
-        </Button>
+        <Box.Header>States</Box.Header>
+        <Box.Content>
+          <Button disabled>Disabled</Button>
+          <Spacer y={0.5} />
+          <Button disabled type="primary">
+            Disabled Primary
+          </Button>
+        </Box.Content>
       </Box>
 
       <Box>
-        <Button size="small">Small</Button>
-        <Spacer y={0.5} />
-        <Button size="medium">Medium</Button>
-        <Spacer y={0.5} />
-        <Button size="large">Large</Button>
+        <Box.Header>Sizes</Box.Header>
+        <Box.Content>
+          <Button size="small">Small</Button>
+          <Spacer y={0.5} />
+          <Button size="medium">Medium</Button>
+          <Spacer y={0.5} />
+          <Button size="large">Large</Button>
+        </Box.Content>
       </Box>
 
       <Box>
-        <Button width={200}>Width: 200px</Button>
-        <Spacer y={0.5} />
-        <Button width="50%">Width: 50%</Button>
-        <Spacer y={0.5} />
-        <Button width="100%">Width: 100%</Button>
+        <Box.Header>Widths</Box.Header>
+        <Box.Content>
+          <Button width={200}>Width: 200px</Button>
+          <Spacer y={0.5} />
+          <Button width="50%">Width: 50%</Button>
+          <Spacer y={0.5} />
+          <Button width="100%">Width: 100%</Button>
+        </Box.Content>
       </Box>
 
       <Box>
-        <Button icon={<Coffee />} size="large">
-          Icon
-        </Button>
-        <Spacer y={0.5} />
-        <Button icon={<Coffee />} size="large" iconRight>
-          Icon
-        </Button>
+        <Box.Header>Icons</Box.Header>
+        <Box.Content>
+          <Button icon={<Coffee />} size="large">
+            Icon
+          </Button>
+          <Spacer y={0.5} />
+          <Button icon={<Coffee />} size="large" iconRight>
+            Icon
+          </Button>
+        </Box.Content>
       </Box>
 
       <h3>Inputs</h3>
 
       <Box>
-        <Input placeholder="Default" />
-        <Spacer y={0.5} />
-        <Input disabled placeholder="Disabled" />
-        <Spacer y={0.5} />
-        <Input errored placeholder="Danger" />
-        <Spacer y={0.5} />
-        <Input readOnly placeholder="Ready Only" initialValue="Ready Only" />
+        <Box.Header>States</Box.Header>
+        <Box.Content>
+          <Input placeholder="Default" />
+          <Spacer y={0.5} />
+          <Input disabled placeholder="Disabled" />
+          <Spacer y={0.5} />
+          <Input errored placeholder="Danger" />
+          <Spacer y={0.5} />
+          <Input readOnly placeholder="Read Only" initialValue="Read Only" />
+        </Box.Content>
       </Box>
 
       <Box>
-        <Input placeholder="Width: 200px" width={200} />
-        <Spacer y={0.5} />
-        <Input placeholder="Width: 50%" width="50%" />
-        <Spacer y={0.5} />
-        <Input placeholder="Width: 100%" width="100%" />
+        <Box.Header>Widths</Box.Header>
+        <Box.Content>
+          <Input placeholder="Width: 200px" width={200} />
+          <Spacer y={0.5} />
+          <Input placeholder="Width: 50%" width="50%" />
+          <Spacer y={0.5} />
+          <Input placeholder="Width: 100%" width="100%" />
+        </Box.Content>
       </Box>
 
       <Box>
-        <Input placeholder="Placeholder" label="Label" />
+        <Box.Header>Label</Box.Header>
+        <Box.Content>
+          <Input placeholder="Placeholder" label="Label" />
+        </Box.Content>
       </Box>
 
       <h3>Avatar</h3>
 
       <Box>
-        <Row align="bottom">
-          <Avatar src={avatar} />
-          <Avatar src={avatar} size={60} />
-          <Avatar src={avatar} size={40} />
-          <Avatar src={avatar} size={20} />
-        </Row>
+        <Box.Header>Sizes</Box.Header>
+        <Box.Content>
+          <Row align="bottom">
+            <Avatar src={avatar} />
+            <Avatar src={avatar} size={60} />
+            <Avatar src={avatar} size={40} />
+            <Avatar src={avatar} size={20} />
+          </Row>
+        </Box.Content>
       </Box>
 
       <style jsx>{`
