@@ -14,7 +14,7 @@ export const getButtonColors = (
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
       bg: "transparent",
-      fg: theme.palette.foreground,
+      fg: theme.palette.grey5,
       border: theme.palette.grey2,
     },
     primary: {

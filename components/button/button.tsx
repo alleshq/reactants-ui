@@ -73,7 +73,7 @@ export const Button: React.FC<Props> = memo<Props>(
         .btn:disabled {
           background: ${theme.palette.grey1};
           border-color: ${theme.palette.grey2};
-          color: ${theme.palette.grey5};
+          color: ${theme.palette.grey4};
           cursor: not-allowed;
         }
 
