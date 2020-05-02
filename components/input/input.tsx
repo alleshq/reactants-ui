@@ -17,9 +17,9 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   iconRight?: React.ReactNode;
   onIconClick?: React.MouseEventHandler<HTMLSpanElement>;
   onIconRightClick?: React.MouseEventHandler<HTMLSpanElement>;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }
 
 export type { Props as InputProps };
