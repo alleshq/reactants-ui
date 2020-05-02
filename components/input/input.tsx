@@ -49,7 +49,7 @@ const Input: React.FC<Props> = ({
 
   const theme = useTheme();
   const [focused, setFocused] = useState<boolean>(false);
-  const { bg, fg, border, darkerBorder } = useMemo(
+  const { fg, border, darkerBorder } = useMemo(
     () => getInputColors(theme, errored),
     [theme, errored]
   );

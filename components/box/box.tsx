@@ -1,4 +1,4 @@
-import React, { useRef, memo } from "react";
+import React, { memo } from "react";
 import { useTheme } from "../styles/use-theme";
 import { BoxHeader } from "./box-header";
 import { BoxContent } from "./box-content";
