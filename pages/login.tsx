@@ -28,6 +28,7 @@ export default () => {
               <Spacer y={0.5} />
 
               <Input
+                type="password"
                 label="Password"
                 placeholder="********"
                 errored={errored}

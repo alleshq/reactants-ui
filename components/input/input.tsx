@@ -3,7 +3,7 @@ import { useTheme } from "../styles/use-theme";
 import { getInputColors } from "./styles";
 import { Spacer } from "../spacer";
 
-interface Props extends React.HTMLAttributes<HTMLInputElement> {
+interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   value?: string;
   initialValue?: string;
   width?: number | string;
