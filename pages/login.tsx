@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Mail, Eye } from "react-feather";
 import Layout from "../lib/layout";
 import { Row, Box, Input, Spacer, Button } from "../components";
 
@@ -23,16 +24,19 @@ export default () => {
                 placeholder="gilfoyle@piedpiper.com"
                 errored={errored}
                 error="Invalid email address"
+                width="100%"
+                onChange={() => setErrored(false)}
               />
 
               <Spacer y={0.5} />
 
-              <Input
-                type="password"
+              <Input.Password
                 label="Password"
-                placeholder="********"
+                placeholder="•••••••••••"
                 errored={errored}
                 error="Invalid password"
+                width="100%"
+                onChange={() => setErrored(false)}
               />
 
               <Spacer y={1} />

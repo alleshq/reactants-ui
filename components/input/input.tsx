@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { useTheme } from "../styles/use-theme";
 import { getInputColors } from "./styles";
-import { Spacer } from "../spacer";
+import { InputPassword } from "./input-password";
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   value?: string;
@@ -13,12 +13,18 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   readOnly?: boolean;
   label?: string;
   className?: string;
+  icon?: React.ReactNode;
+  iconRight?: React.ReactNode;
+  onIconClick?: React.MouseEventHandler<HTMLSpanElement>;
+  onIconRightClick?: React.MouseEventHandler<HTMLSpanElement>;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 }
 
-export const Input: React.FC<Props> = ({
+export type { Props as InputProps };
+
+const Input: React.FC<Props> = ({
   value,
   initialValue = "",
   width = "auto",
@@ -28,6 +34,10 @@ export const Input: React.FC<Props> = ({
   readOnly,
   label,
   className = "",
+  icon,
+  onIconClick,
+  iconRight,
+  onIconRightClick,
   onChange,
   onFocus,
   onBlur,
@@ -35,12 +45,14 @@ export const Input: React.FC<Props> = ({
   placeholder,
   ...props
 }) => {
-  const theme = useTheme();
   if (typeof width == "number") width = `${width}px`;
-  const colors = useMemo(() => getInputColors(theme, errored), [
-    theme,
-    errored,
-  ]);
+
+  const theme = useTheme();
+  const [focused, setFocused] = useState<boolean>(false);
+  const { bg, fg, border, darkerBorder } = useMemo(
+    () => getInputColors(theme, errored),
+    [theme, errored]
+  );
 
   const [selfValue, setSelfValue] = useState<string>(initialValue);
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,70 +61,171 @@ export const Input: React.FC<Props> = ({
     onChange && onChange(event);
   };
 
+  const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    setFocused(true);
+    onFocus && onFocus(e);
+  };
+
+  const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    setFocused(false);
+    onBlur && onBlur(e);
+  };
+
   useEffect(() => {
     if (value === undefined) return;
     setSelfValue(value);
   }, [value]);
 
   return (
-    <div className={`input-container ${className}`}>
+    <>
       {label && <label>{label}</label>}
 
-      <input
-        disabled={disabled}
-        placeholder={placeholder}
-        value={selfValue}
-        readOnly={readOnly}
-        onChange={changeHandler}
-        onBlur={onBlur}
-        onFocus={onFocus}
-        {...props}
-      />
+      <div className={`input-container ${className}`}>
+        <div className={`input-wrapper ${focused ? "focused" : ""}`}>
+          {icon && (
+            <span
+              className={`input-icon ${onIconClick ? "clickable" : ""}`}
+              onClick={onIconClick}
+            >
+              {icon}
+            </span>
+          )}
 
-      {error && <span style={{ opacity: errored ? 1 : 0 }}>{error}</span>}
+          <input
+            className={`${icon ? "left-icon" : ""} ${
+              iconRight ? "right-icon" : ""
+            }`}
+            disabled={disabled}
+            placeholder={placeholder}
+            value={selfValue}
+            readOnly={readOnly}
+            onChange={changeHandler}
+            onBlur={blurHandler}
+            onFocus={focusHandler}
+            {...props}
+          />
+
+          {iconRight && (
+            <span
+              className={`input-icon ${onIconRightClick ? "clickable" : ""}`}
+              onClick={onIconRightClick}
+            >
+              {iconRight}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {error && (
+        <span className="input-error" style={{ opacity: errored ? 1 : 0 }}>
+          {error}
+        </span>
+      )}
 
       <style jsx>{`
         .input-container {
+          display: inline-flex;
+          align-items: center;
           width: ${width};
         }
 
-        input {
-          display: block;
-          padding: 9px;
-          font-size: 0.875em;
-          box-sizing: border-box;
-          background-color: ${colors.bg};
-          color: ${colors.fg};
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
           border-radius: ${theme.layout.radius};
-          border: 1px solid ${colors.border};
-          transition: border-color 0.2s ease;
-          font-family: ${theme.font.sans};
-          outline: none;
-          width: 100%;
+          border: 1px solid ${border};
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
         }
 
-        input:focus {
-          border: 1px solid ${colors.darkerBorder};
+        .input-wrapper.focused {
+          border-color: ${darkerBorder};
+        }
+
+        input {
+          margin: 10px 12px;
+          padding: 0;
+          box-shadow: none;
+          font-size: 0.875em;
+          background-color: transparent;
+          border: none;
+          color: ${fg};
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+
+        input.left-icon {
+          margin-left: 0px;
+        }
+
+        input.right-icon {
+          margin-right: 0px;
         }
 
         input:disabled {
           opacity: 0.6;
         }
 
-        label {
-          color: ${theme.palette.grey6};
-          display: inline-block;
-          margin-bottom: 10px;
-          font-weight: 500;
-          font-size: 0.875em;
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: 16px;
+          height: 100%;
+          align-items: center;
+          vertical-align: center;
+          margin: 0;
+          padding: 0 10px;
+          line-height: 1;
+          position: relative;
         }
 
-        span {
+        .input-icon.clickable {
+          cursor: pointer;
+        }
+
+        label {
+          display: block;
+          font-weight: normal;
+          color: ${theme.palette.grey6};
+          padding: 0 0 0 1px;
+          margin-bottom: ${theme.layout.gapHalf};
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+
+        label > :global(*:first-child) {
+          margin-top: 0;
+        }
+
+        label > :global(*:last-child) {
+          margin-bottom: 0;
+        }
+
+        .input-error {
           color: ${theme.palette.danger};
           font-size: 0.85em;
           transition: opacity 0.2s ease;
         }
+
+        ::placeholder,
+        ::-moz-placeholder,
+        :-ms-input-placeholder,
+        ::-webkit-input-placeholder {
+          color: ${theme.palette.grey3};
+        }
       `}</style>
-    </div>
+    </>
   );
 };
+
+type InputWithOtherComponents = typeof Input & {
+  Password: typeof InputPassword;
+};
+
+const InputWithOtherComponents = Input as InputWithOtherComponents;
+export { InputWithOtherComponents as Input };
