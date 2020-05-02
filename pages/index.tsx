@@ -1,19 +1,10 @@
 import { Coffee } from "react-feather";
-import {
-  useTheme,
-  Button,
-  Input,
-  Box,
-  Avatar,
-  Row,
-  Col,
-  Spacer,
-} from "../components";
+import React from "react";
+import { Button, Input, Box, Avatar, Row, Col, Spacer } from "../components";
 import Layout from "../lib/layout";
 import ExampleBlock from "../lib/example-block";
 
 export default () => {
-  const theme = useTheme();
   const avatar = "https://github.com/identicons/danteissaias.png";
 
   return (

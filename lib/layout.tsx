@@ -1,4 +1,4 @@
-import { useState, useEffect, HTMLProps } from "react";
+import React, { useState, useEffect, HTMLProps } from "react";
 
 const Layout: React.FC<React.PropsWithChildren<HTMLProps<HTMLElement>>> = ({
   children,

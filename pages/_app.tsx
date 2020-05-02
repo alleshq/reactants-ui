@@ -1,17 +1,15 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
 import {
   ReactantsThemes,
   ReactantsProvider,
-  useTheme,
   CSSBaseline,
   Button,
   Header,
 } from "../components";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
-  const theme = useTheme();
   const [customTheme, setCustomTheme] = useState<Partial<ReactantsThemes>>({});
   const themeChangeHandle = (theme: Partial<ReactantsThemes>) => {
     window.localStorage.setItem("theme", theme.type);
