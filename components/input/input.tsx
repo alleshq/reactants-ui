@@ -146,8 +146,7 @@ const Input: React.FC<Props> = ({
         }
 
         input {
-          margin: 10px 12px;
-          padding: 0;
+          padding: 10px 12px;
           box-shadow: none;
           font-size: 0.875em;
           background-color: transparent;
