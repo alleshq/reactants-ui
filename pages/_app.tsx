@@ -30,7 +30,14 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
         fixed
         logo={
           <Link href="/" passHref>
-            <a style={{ color: "white", textDecoration: "none" }}>Reactants</a>
+            <a
+              style={{
+                color: customTheme.type == "dark" ? "white" : "black",
+                textDecoration: "none",
+              }}
+            >
+              Reactants
+            </a>
           </Link>
         }
       >
