@@ -1,11 +1,11 @@
 import {
-  ReactantsThemesPalette,
+  ReactantsThemesColors,
   ReactantsFont,
   ReactantsThemes,
   ReactantsLayout,
 } from "./index";
 
-export const palette: ReactantsThemesPalette = {
+export const colors: ReactantsThemesColors = {
   background: "#ffffff",
   foreground: "#000000",
   primary: "#23539e",
@@ -32,7 +32,7 @@ export const font: ReactantsFont = {
 };
 
 export const themes: ReactantsThemes = {
-  palette,
+  colors,
   font,
   layout,
   type: "light",

@@ -42,7 +42,7 @@ export const Loading: React.FC<Props> = memo<Props>(({ ...props }) => {
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background-color: ${theme.palette.grey6};
+          background-color: ${theme.colors.grey6};
           margin: 0 1px;
           display: inline-block;
           animation: loading-blink 1.4s infinite both;

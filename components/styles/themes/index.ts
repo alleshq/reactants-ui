@@ -1,6 +1,6 @@
 import { ThemeTypes } from "../../utils/prop-types";
 
-export interface ReactantsThemesPalette {
+export interface ReactantsThemesColors {
   background: string;
   foreground: string;
   primary: string;
@@ -27,7 +27,7 @@ export interface ReactantsFont {
 }
 
 export interface ReactantsThemes {
-  palette: ReactantsThemesPalette;
+  colors: ReactantsThemesColors;
   layout: ReactantsLayout;
   font: ReactantsFont;
   type: ThemeTypes;

@@ -16,7 +16,7 @@ const Box: React.FC<Props> = memo<Props>(
         {children}
         <style jsx>{`
           .box {
-            border: 1px solid ${theme.palette.grey2};
+            border: 1px solid ${theme.colors.grey2};
             border-radius: ${theme.layout.radius};
           }
         `}</style>

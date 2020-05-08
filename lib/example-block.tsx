@@ -7,17 +7,17 @@ interface Props {
 }
 
 const getBackground = (theme: ReactantsThemes, plain: number | boolean) => {
-  if (typeof plain !== "number") return theme.palette.primary;
+  if (typeof plain !== "number") return theme.colors.primary;
 
   const colors = [
-    theme.palette.grey1,
-    theme.palette.grey2,
-    theme.palette.grey3,
-    theme.palette.grey4,
-    theme.palette.grey5,
-    theme.palette.grey6,
+    theme.colors.grey1,
+    theme.colors.grey2,
+    theme.colors.grey3,
+    theme.colors.grey4,
+    theme.colors.grey5,
+    theme.colors.grey6,
   ];
-  return colors[plain - 1] || theme.palette.primary;
+  return colors[plain - 1] || theme.colors.primary;
 };
 
 const ExampleBlock: React.FC<Props> = memo<Props>(
@@ -34,7 +34,7 @@ const ExampleBlock: React.FC<Props> = memo<Props>(
             background: ${bg};
             padding: ${theme.layout.gapHalf};
             border-radius: ${theme.layout.radius};
-            color: ${theme.palette.background};
+            color: ${theme.colors.background};
             font-size: 0.75rem;
           }
         `}</style>

@@ -14,8 +14,8 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
         html,
         body {
-          background-color: ${theme.palette.background};
-          color: ${theme.palette.foreground};
+          background-color: ${theme.colors.background};
+          color: ${theme.colors.foreground};
         }
 
         html,

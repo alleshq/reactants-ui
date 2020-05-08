@@ -44,9 +44,9 @@ export const Header: React.FC<Props> = memo<Props>(
             right: 0;
             top: 0;
             height: 60px;
-            background-color: ${theme.palette.background}dd;
+            background-color: ${theme.colors.background}dd;
             backdrop-filter: saturate(180%) blur(5px);
-            border-bottom: 1px solid ${theme.palette.grey2};
+            border-bottom: 1px solid ${theme.colors.grey2};
             z-index: 999;
             padding: 0 20px;
             box-shadow: none;

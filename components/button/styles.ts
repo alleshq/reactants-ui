@@ -14,18 +14,18 @@ export const getButtonColors = (
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
       bg: "transparent",
-      fg: theme.palette.grey5,
-      border: theme.palette.grey2,
+      fg: theme.colors.grey5,
+      border: theme.colors.grey2,
     },
     primary: {
-      bg: theme.palette.primary,
+      bg: theme.colors.primary,
       fg: "#fff",
-      border: theme.palette.primary,
+      border: theme.colors.primary,
     },
     danger: {
-      bg: theme.palette.danger,
+      bg: theme.colors.danger,
       fg: "#fff",
-      border: theme.palette.danger,
+      border: theme.colors.danger,
     },
   };
 

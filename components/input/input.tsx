@@ -188,7 +188,7 @@ const Input: React.FC<Props> = ({
         label {
           display: block;
           font-weight: normal;
-          color: ${theme.palette.grey6};
+          color: ${theme.colors.grey6};
           padding: 0 0 0 1px;
           margin-bottom: ${theme.layout.gapHalf};
           font-size: 0.875rem;
@@ -204,7 +204,7 @@ const Input: React.FC<Props> = ({
         }
 
         .input-error {
-          color: ${theme.palette.danger};
+          color: ${theme.colors.danger};
           font-size: 0.85em;
           transition: opacity 0.2s ease;
         }
@@ -213,7 +213,7 @@ const Input: React.FC<Props> = ({
         ::-moz-placeholder,
         :-ms-input-placeholder,
         ::-webkit-input-placeholder {
-          color: ${theme.palette.grey3};
+          color: ${theme.colors.grey3};
         }
       `}</style>
     </>

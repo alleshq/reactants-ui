@@ -14,14 +14,14 @@ export const getInputColors = (
   return errored
     ? {
         bg: "transparent",
-        fg: theme.palette.foreground,
-        border: theme.palette.danger,
-        darkerBorder: theme.palette.danger,
+        fg: theme.colors.foreground,
+        border: theme.colors.danger,
+        darkerBorder: theme.colors.danger,
       }
     : {
         bg: "transparent",
-        fg: theme.palette.foreground,
-        border: theme.palette.grey2,
-        darkerBorder: theme.palette.grey5,
+        fg: theme.colors.foreground,
+        border: theme.colors.grey2,
+        darkerBorder: theme.colors.grey5,
       };
 };

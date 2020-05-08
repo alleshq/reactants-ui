@@ -33,8 +33,8 @@ export const Avatar: React.FC<Props> = memo<Props>(
             overflow: hidden;
             border-radius: 100%;
             display: inline-block;
-            border: 1px solid ${theme.palette.grey2};
-            background-color: ${theme.palette.grey1};
+            border: 1px solid ${theme.colors.grey2};
+            background-color: ${theme.colors.grey1};
             transition: border 0.2s ease, background-color 0.2s ease;
             width: ${size};
             height: ${size};
