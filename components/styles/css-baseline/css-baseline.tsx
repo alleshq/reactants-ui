@@ -18,12 +18,6 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           color: ${theme.colors.foreground};
         }
 
-        html,
-        body,
-        #__next {
-          height: 100%;
-        }
-
         html {
           font-size: 16px;
         }
