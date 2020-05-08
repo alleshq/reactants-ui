@@ -8,7 +8,7 @@ interface Props extends React.ImgHTMLAttributes<HTMLImageElement> {
 }
 
 export const Avatar: React.FC<Props> = memo<Props>(
-  ({ src, size = 80, className, ...props }) => {
+  ({ src, size = 80, ...props }) => {
     const theme = useTheme();
     const [ready, setReady] = useState(false);
 
@@ -19,7 +19,7 @@ export const Avatar: React.FC<Props> = memo<Props>(
     }, []);
 
     return (
-      <span className={`avatar ${className}`}>
+      <span className={`avatar`}>
         <img
           src={src}
           ref={imgRef}
@@ -30,14 +30,14 @@ export const Avatar: React.FC<Props> = memo<Props>(
 
         <style jsx>{`
           .avatar {
-            overflow: hidden;
-            border-radius: 100%;
-            display: inline-block;
-            border: 1px solid ${theme.colors.grey2};
-            background-color: ${theme.colors.grey1};
-            transition: border 0.2s ease, background-color 0.2s ease;
             width: ${size};
             height: ${size};
+            border: 1px solid ${theme.colors.grey2};
+            border-radius: 100%;
+            background-color: ${theme.colors.grey1};
+            overflow: hidden;
+            display: inline-block;
+            transition: border 0.2s ease, background-color 0.2s ease;
           }
 
           .avatar-img {

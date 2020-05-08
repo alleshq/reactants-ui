@@ -150,6 +150,7 @@ const Input: React.FC<Props> = ({
           background-color: transparent;
           border: none;
           color: ${fg};
+          font-family: ${theme.font.sans};
           outline: none;
           border-radius: 0;
           width: 100%;
