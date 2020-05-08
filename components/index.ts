@@ -12,4 +12,5 @@ export * from "./row";
 export * from "./col";
 export * from "./spacer";
 export * from "./loading";
+export * from "./breadcrumb";
 export * from "./providers/reactants-providet";

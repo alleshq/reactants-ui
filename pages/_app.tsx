@@ -2,16 +2,20 @@ import React, { useState, useEffect } from "react";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   ReactantsThemes,
   ReactantsProvider,
   CSSBaseline,
   Button,
   Header,
+  Breadcrumb,
 } from "../components";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   const [customTheme, setCustomTheme] = useState<Partial<ReactantsThemes>>({});
+  const router = useRouter();
+
   const themeChangeHandle = (theme: Partial<ReactantsThemes>) => {
     window.localStorage.setItem("theme", theme.type ?? "light");
     setCustomTheme(theme);
@@ -29,16 +33,17 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
       <Header
         fixed
         logo={
-          <Link href="/" passHref>
-            <a
-              style={{
-                color: customTheme.type == "dark" ? "white" : "black",
-                textDecoration: "none",
-              }}
-            >
-              Reactants
-            </a>
-          </Link>
+          <Breadcrumb>
+            <Link href="/" passHref>
+              <Breadcrumb.Item>
+                <h4 style={{ display: "inline" }}>Reactants</h4>
+              </Breadcrumb.Item>
+            </Link>
+
+            {router.pathname.includes("login") && (
+              <Breadcrumb.Item>Login</Breadcrumb.Item>
+            )}
+          </Breadcrumb>
         }
       >
         <Button

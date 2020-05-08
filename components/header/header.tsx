@@ -33,7 +33,7 @@ export const Header: React.FC<Props> = memo<Props>(
         {...props}
       >
         <nav>
-          <h4 className="header-title">{logo}</h4>
+          <div className="header-title">{logo}</div>
           <div className="header-actions">{children}</div>
         </nav>
 

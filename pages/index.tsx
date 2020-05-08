@@ -1,6 +1,15 @@
 import { Coffee } from "react-feather";
 import React from "react";
-import { Button, Input, Box, Avatar, Row, Col, Spacer } from "../components";
+import {
+  Button,
+  Input,
+  Box,
+  Avatar,
+  Row,
+  Col,
+  Spacer,
+  Breadcrumb,
+} from "../components";
 import Layout from "../lib/layout";
 import ExampleBlock from "../lib/example-block";
 
@@ -177,6 +186,21 @@ export default () => {
             <Avatar src={avatar} size={40} />
             <Avatar src={avatar} size={20} />
           </Row>
+        </Box.Content>
+      </Box>
+
+      <h3>Breadcrumb</h3>
+
+      <Box>
+        <Box.Header>Default</Box.Header>
+        <Box.Content>
+          <Breadcrumb>
+            <Breadcrumb.Item href="/">
+              <h4 style={{ display: "inline" }}>Reactants</h4>
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>Is</Breadcrumb.Item>
+            <Breadcrumb.Item>Cool</Breadcrumb.Item>
+          </Breadcrumb>
         </Box.Content>
       </Box>
 
