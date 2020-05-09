@@ -9,8 +9,10 @@ import {
   Button,
   Header,
   Breadcrumb,
+  Input,
 } from "../components";
 import "../components/styles/global.css";
+import { Search } from "react-feather";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   const [customTheme, setCustomTheme] = useState<Partial<ReactantsThemes>>({});
@@ -48,6 +50,8 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
               />
             ))}
         </Breadcrumb>
+
+        <Input icon={<Search />} placeholder="Search" width="50%" />
 
         <Button
           small

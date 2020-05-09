@@ -8,7 +8,6 @@
   backdrop-filter: saturate(180%) blur(5px);
   border-bottom: 1px solid var(--accents-2);
   z-index: 999;
-  padding: 0 5rem;
 }
 
 .header .nav {
@@ -18,4 +17,5 @@
   max-width: 1000px;
   margin: 0 auto;
   height: 100%;
+  padding: 0 1rem;
 }
