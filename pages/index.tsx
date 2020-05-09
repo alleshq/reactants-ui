@@ -9,6 +9,7 @@ import {
   Col,
   Spacer,
   Breadcrumb,
+  GenericAvatar,
 } from "../components";
 import Layout from "../lib/layout";
 import ExampleBlock from "../lib/example-block";
@@ -216,10 +217,10 @@ export default () => {
         <Box.Header>Sizes</Box.Header>
         <Box.Content>
           <Row align="bottom">
-            <Avatar src={avatar} />
-            <Avatar src={avatar} size={60} />
-            <Avatar src={avatar} size={40} />
-            <Avatar src={avatar} size={20} />
+            <GenericAvatar src={avatar} />
+            <GenericAvatar src={avatar} size={60} />
+            <GenericAvatar src={avatar} size={40} />
+            <GenericAvatar src={avatar} size={20} />
           </Row>
         </Box.Content>
       </Box>
@@ -227,8 +228,6 @@ export default () => {
       <Spacer y={1} />
 
       <h3>Breadcrumb</h3>
-
-      <Spacer y={1} />
 
       <Box>
         <Box.Header>Default</Box.Header>
@@ -240,7 +239,7 @@ export default () => {
 
             <Link href="/" passHref>
               <Breadcrumb.Item>
-                <Avatar src={avatar} size={25} />
+                <Avatar username={"dante"} size={25} />
               </Breadcrumb.Item>
             </Link>
 
