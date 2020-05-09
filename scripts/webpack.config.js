@@ -102,7 +102,7 @@ module.exports = async () => {
         {
           test: /\.css$/i,
           use: [
-            "style-loader",
+            "file-loader",
             {
               loader: "css-loader",
               options: {
