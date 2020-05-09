@@ -1,34 +1,40 @@
 import React, { memo } from "react";
-import { useTheme } from "../styles/use-theme";
-import { BoxHeader } from "./box-header";
-import { BoxContent } from "./box-content";
+import styles from "./box.module.css";
 
-interface Props extends React.HTMLAttributes<any> {
-  className?: string;
-}
+const Box: React.FC = memo(({ children, ...props }) => {
+  return (
+    <div className={styles.box} {...props}>
+      {children}
+    </div>
+  );
+});
 
-const Box: React.FC<Props> = memo<Props>(
-  ({ className = "", children, ...props }) => {
-    const theme = useTheme();
+const BoxHeader: React.FC = memo(({ children }) => {
+  return <div className={styles.header}>{children}</div>;
+});
 
+type BoxContentProps = {
+  as?: keyof JSX.IntrinsicElements;
+  padding?: number | string;
+} & React.HTMLAttributes<any>;
+
+const BoxContent: React.FC<BoxContentProps> = memo<BoxContentProps>(
+  ({ as = "div", children, padding = 15, ...props }) => {
+    const Component = as;
     return (
-      <div className={`box ${className}`} {...props}>
+      <Component {...props} style={{ padding }}>
         {children}
-        <style jsx>{`
-          .box {
-            border: 1px solid ${theme.colors.grey2};
-            border-radius: ${theme.layout.radius};
-          }
-        `}</style>
-      </div>
+      </Component>
     );
   }
 );
 
-type BoxWithOtherComponents = typeof Box & {
+const BoxWithSubcomponents = Box as typeof Box & {
   Header: typeof BoxHeader;
   Content: typeof BoxContent;
 };
 
-const BoxWithOtherComponents = Box as BoxWithOtherComponents;
-export { BoxWithOtherComponents as Box };
+BoxWithSubcomponents.Header = BoxHeader;
+BoxWithSubcomponents.Content = BoxContent;
+
+export { BoxWithSubcomponents as Box };

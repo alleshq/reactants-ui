@@ -212,11 +212,6 @@ export default () => {
         h3 {
           margin: 45px 0 25px;
         }
-
-        :global(.box) {
-          margin: 10px 0;
-          width: 100%;
-        }
       `}</style>
     </Layout>
   );
