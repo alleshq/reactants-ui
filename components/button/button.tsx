@@ -1,44 +1,51 @@
-import React, { useRef, useMemo, memo } from "react";
+import React, { useMemo, memo } from "react";
 import { useTheme } from "../styles/use-theme";
-import { ButtonTypes, NormalSizes } from "../utils/prop-types";
+import {
+  ButtonKinds,
+  NormalSizes,
+  ButtonImportance,
+} from "../utils/prop-types";
 import { getButtonColors, getButtonSize } from "./styles";
 import { Loading } from "../loading";
 
-interface Props
-  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
-  type?: ButtonTypes;
+interface Props {
+  kind?: ButtonKinds;
+  importance?: ButtonImportance;
   size?: NormalSizes;
-  width?: number | string;
+  fluid?: boolean;
+  rounded?: boolean;
   icon?: React.ReactNode;
   iconRight?: boolean;
   loading?: boolean;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  className?: string;
+  disabled?: boolean;
 }
 
 export const Button: React.FC<Props> = memo<Props>(
   ({
-    type = "default",
+    kind = "default",
+    importance = "high",
     size = "medium",
     onClick,
-    className = "",
-    width = "auto",
+    fluid,
     icon,
     iconRight = false,
     loading = false,
+    rounded = false,
     children,
     ...props
   }) => {
     const theme = useTheme();
-    const buttonRef = useRef<HTMLButtonElement>(null);
-    const colors = useMemo(() => getButtonColors(theme, type), [theme, type]);
+    const colors = useMemo(() => getButtonColors(theme, kind, importance), [
+      theme,
+      kind,
+      importance,
+    ]);
     const sizes = useMemo(() => getButtonSize(size), [size]);
-    if (typeof width == "number") width = `${width}px`;
 
     return (
       <button
-        ref={buttonRef}
-        className={`btn ${className}`}
+        className="btn"
         onClick={onClick}
         disabled={props.disabled || loading}
         {...props}
@@ -55,19 +62,30 @@ export const Button: React.FC<Props> = memo<Props>(
           padding: ${sizes.padding};
           font-size: ${sizes.font};
           box-sizing: border-box;
-          background-color: ${colors.bg};
+          background-color: ${
+            ((importance == "high" || importance == "medium") && colors.bg) ||
+            "transparent"
+          };
           color: ${colors.fg};
-          border: 1px solid ${colors.border};
-          border-radius: ${theme.layout.radius};
-          transition: opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+          border: 1px solid ${
+            ((importance == "high" || importance == "medium") &&
+              colors.border) ||
+            "transparent"
+          };;
+          border-radius: ${rounded ? "25px" : theme.layout.radius};
+          transition: opacity 0.12s ease, background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease, transform 0.12s ease;
+          ${
+            importance == "high" &&
+            "box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04);"
+          }
           font-family: ${theme.font.sans};
           font-weight: 500;
           outline: none;
-          width: ${width};
           height: ${sizes.height};
           min-width: ${sizes.minWidth};
           user-select: none;
           cursor: pointer;
+          width: ${fluid ? "100%" : "auto"};
         }
 
         .btn:disabled {
@@ -75,6 +93,12 @@ export const Button: React.FC<Props> = memo<Props>(
           border-color: ${theme.colors.grey2};
           color: ${theme.colors.grey4};
           cursor: not-allowed;
+          box-shadow: none;
+        }
+
+        .btn:active:enabled, .btn:hover:enabled {
+          ${importance == "low" && `background-color: ${colors.bg}`};
+          ${importance == "low" && `border-color: ${colors.border}`};
         }
 
         .btn:hover:enabled {
@@ -82,7 +106,8 @@ export const Button: React.FC<Props> = memo<Props>(
         }
 
         .btn:active:enabled {
-          opacity: 0.5;
+          transform: scale(0.925);
+          opacity: 1;
         }
 
         .btn::-moz-focus-inner {

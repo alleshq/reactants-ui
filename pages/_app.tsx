@@ -48,7 +48,6 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
       >
         <Button
           size="small"
-          className="toggle"
           onClick={() => {
             themeChangeHandle({
               type: customTheme.type == "dark" ? "light" : "dark",

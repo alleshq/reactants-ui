@@ -8,8 +8,8 @@ import {
 export const colors: ReactantsThemesColors = {
   background: "#ffffff",
   foreground: "#000000",
-  primary: "#23539e",
-  danger: "#ff5252",
+  primary: "#0055ff",
+  danger: "#ff3333",
   grey1: "#fafafa",
   grey2: "#eaeaea",
   grey3: "#999",
@@ -23,7 +23,7 @@ export const colors: ReactantsThemesColors = {
 export const layout: ReactantsLayout = {
   gap: "16pt",
   gapHalf: "8pt",
-  radius: "5px",
+  radius: "7.5px",
 };
 
 export const font: ReactantsFont = {

@@ -88,13 +88,37 @@ export default () => {
       <h3>Buttons</h3>
 
       <Box>
-        <Box.Header>Colors</Box.Header>
+        <Box.Header>Kinds</Box.Header>
         <Box.Content>
           <Button>Default</Button>
           <Spacer y={0.5} />
-          <Button type="primary">Primary</Button>
+          <Button kind="primary">Primary</Button>
           <Spacer y={0.5} />
-          <Button type="danger">Danger</Button>
+          <Button kind="danger">Danger</Button>
+        </Box.Content>
+      </Box>
+
+      <Box>
+        <Box.Header>Importance</Box.Header>
+        <Box.Content>
+          <Button importance="low" kind="primary">
+            Low
+          </Button>
+          <Spacer y={0.5} />
+          <Button importance="medium" kind="primary">
+            Medium
+          </Button>
+          <Spacer y={0.5} />
+          <Button kind="primary">Default</Button>
+        </Box.Content>
+      </Box>
+
+      <Box>
+        <Box.Header>Rounded</Box.Header>
+        <Box.Content>
+          <Button rounded kind="primary">
+            Rounded
+          </Button>
         </Box.Content>
       </Box>
 
@@ -121,11 +145,11 @@ export default () => {
       <Box>
         <Box.Header>Widths</Box.Header>
         <Box.Content>
-          <Button width={200}>Width: 200px</Button>
+          <Button>Width: 200px</Button>
           <Spacer y={0.5} />
-          <Button width="50%">Width: 50%</Button>
+          <Button>Width: 50%</Button>
           <Spacer y={0.5} />
-          <Button width="100%">Width: 100%</Button>
+          <Button>Width: 100%</Button>
         </Box.Content>
       </Box>
 
