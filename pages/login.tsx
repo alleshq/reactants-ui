@@ -4,7 +4,7 @@ import { Row, Box, Input, Spacer, Button } from "../components";
 
 export default () => {
   const [errored, setErrored] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   const handleSubmit = (e: React.FormEvent) => {
     setLoading(true);
     e.preventDefault();

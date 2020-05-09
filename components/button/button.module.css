@@ -10,15 +10,6 @@
   --button-border-color: transparent;
 }
 
-.btn:disabled,
-.btn.loading {
-  --button-bg: var(--accents-1);
-  --button-fg: #666;
-  --button-cursor: default;
-  --button-box-shadow: none;
-  --button-border-color: var(--accents-2);
-}
-
 .btn.primary {
   --button-fg: white;
   --button-bg: var(--primary);
@@ -27,6 +18,15 @@
 .btn.danger {
   --button-fg: white;
   --button-bg: var(--danger);
+}
+
+.btn:disabled,
+.btn.loading {
+  --button-bg: var(--accents-1);
+  --button-fg: #666;
+  --button-cursor: default;
+  --button-box-shadow: none;
+  --button-border-color: var(--accents-2);
 }
 
 .btn.small {

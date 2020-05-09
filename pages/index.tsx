@@ -102,7 +102,7 @@ export default () => {
         <Box.Header>Variants</Box.Header>
         <Box.Content>
           <Button primary flat>
-            Action
+            Flat
           </Button>
           <Spacer y={0.5} />
           <Button rounded primary>
