@@ -25,6 +25,8 @@ export default () => {
         margin: "80px auto 0",
       }}
     >
+      <Spacer y={1} />
+
       <h3>Layout</h3>
 
       <Box>
@@ -38,6 +40,8 @@ export default () => {
           </Row>
         </Box.Content>
       </Box>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>Columns</Box.Header>
@@ -60,6 +64,8 @@ export default () => {
           </Row>
         </Box.Content>
       </Box>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>Gaps</Box.Header>
@@ -86,7 +92,11 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <h3>Buttons</h3>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>Colors</Box.Header>
@@ -98,6 +108,8 @@ export default () => {
           <Button danger>Danger</Button>
         </Box.Content>
       </Box>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>Variants</Box.Header>
@@ -116,6 +128,8 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <Box>
         <Box.Header>Sizes</Box.Header>
         <Box.Content>
@@ -127,12 +141,16 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <Box>
         <Box.Header>Fluid</Box.Header>
         <Box.Content>
           <Button fluid>Width: 100%</Button>
         </Box.Content>
       </Box>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>Icons</Box.Header>
@@ -147,7 +165,11 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <h3>Inputs</h3>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>States</Box.Header>
@@ -162,6 +184,8 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <Box>
         <Box.Header>Widths</Box.Header>
         <Box.Content>
@@ -173,6 +197,8 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <Box>
         <Box.Header>Label</Box.Header>
         <Box.Content>
@@ -180,7 +206,11 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <h3>Avatar</h3>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>Sizes</Box.Header>
@@ -194,7 +224,11 @@ export default () => {
         </Box.Content>
       </Box>
 
+      <Spacer y={1} />
+
       <h3>Breadcrumb</h3>
+
+      <Spacer y={1} />
 
       <Box>
         <Box.Header>Default</Box.Header>
