@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap");
+
+:root {
+  --foreground: black;
+  --background: white;
+  --primary: hsla(215, 65%, 40%, 1);
+  --primary-015: hsla(215, 65%, 40%, 0.15);
+  --danger: hsla(0, 100%, 65%, 1);
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+  --accents-3: #999;
+  --accents-4: #888;
+  --accents-5: #666;
+  --accents-6: #444;
+  --accents-7: #333;
+  --accents-8: #111;
+  --radius: 6.75px;
+  --sans: "Inter", sans-serif;
+}
+
+:root.dark-mode {
+  --foreground: white;
+  --background: black;
+  --accents-8: #fafafa;
+  --accents-7: #eaeaea;
+  --accents-6: #999999;
+  --accents-5: #888888;
+  --accents-4: #666666;
+  --accents-3: #444444;
+  --accents-2: #333333;
+  --accents-1: #111111;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--sans);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.066875rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.25rem;
+  letter-spacing: -0.020625rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  letter-spacing: -0.029375rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  letter-spacing: -0.020625rem;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1rem;
+  letter-spacing: -0.01125rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.875rem;
+  letter-spacing: -0.005625rem;
+  font-weight: 600;
+}

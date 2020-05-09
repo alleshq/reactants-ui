@@ -2,7 +2,6 @@
 
 export * from "./styles/themes";
 export * from "./styles/use-theme";
-export * from "./styles/css-baseline";
 export * from "./avatar";
 export * from "./button";
 export * from "./box";

@@ -46,7 +46,7 @@ export default () => {
 
               <Spacer y={1} />
 
-              <Button loading={loading} fluid kind="primary">
+              <Button loading={loading} fluid primary>
                 Log In
               </Button>
 

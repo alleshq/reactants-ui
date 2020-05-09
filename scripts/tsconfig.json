@@ -22,6 +22,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "files": ["../components/index.ts"],
+  "files": ["../components/index.ts", "../next-env.d.ts"],
   "exclude": ["node_modules", "lib", "es"]
 }

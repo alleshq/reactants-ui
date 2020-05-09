@@ -88,43 +88,27 @@ export default () => {
       <h3>Buttons</h3>
 
       <Box>
-        <Box.Header>Kinds</Box.Header>
+        <Box.Header>Colors</Box.Header>
         <Box.Content>
           <Button>Default</Button>
           <Spacer y={0.5} />
-          <Button kind="primary">Primary</Button>
+          <Button primary>Primary</Button>
           <Spacer y={0.5} />
-          <Button kind="danger">Danger</Button>
+          <Button danger>Danger</Button>
         </Box.Content>
       </Box>
 
       <Box>
-        <Box.Header>Importance</Box.Header>
+        <Box.Header>Variants</Box.Header>
         <Box.Content>
-          <Button importance="low" kind="primary">
-            Low
+          <Button primary flat>
+            Action
           </Button>
           <Spacer y={0.5} />
-          <Button importance="medium" kind="primary">
-            Medium
-          </Button>
-          <Spacer y={0.5} />
-          <Button kind="primary">Default</Button>
-        </Box.Content>
-      </Box>
-
-      <Box>
-        <Box.Header>Rounded</Box.Header>
-        <Box.Content>
-          <Button rounded kind="primary">
+          <Button rounded primary>
             Rounded
           </Button>
-        </Box.Content>
-      </Box>
-
-      <Box>
-        <Box.Header>States</Box.Header>
-        <Box.Content>
+          <Spacer y={0.5} />
           <Button disabled>Disabled</Button>
           <Spacer y={0.5} />
           <Button loading>Log in</Button>
@@ -134,33 +118,29 @@ export default () => {
       <Box>
         <Box.Header>Sizes</Box.Header>
         <Box.Content>
-          <Button size="small">Small</Button>
+          <Button small>Small</Button>
           <Spacer y={0.5} />
-          <Button size="medium">Medium</Button>
+          <Button medium>Medium</Button>
           <Spacer y={0.5} />
-          <Button size="large">Large</Button>
+          <Button large>Large</Button>
         </Box.Content>
       </Box>
 
       <Box>
-        <Box.Header>Widths</Box.Header>
+        <Box.Header>Fluid</Box.Header>
         <Box.Content>
-          <Button>Width: 200px</Button>
-          <Spacer y={0.5} />
-          <Button>Width: 50%</Button>
-          <Spacer y={0.5} />
-          <Button>Width: 100%</Button>
+          <Button fluid>Width: 100%</Button>
         </Box.Content>
       </Box>
 
       <Box>
         <Box.Header>Icons</Box.Header>
         <Box.Content>
-          <Button icon={<Coffee />} size="large">
+          <Button icon={<Coffee />} flat large primary>
             Icon
           </Button>
           <Spacer y={0.5} />
-          <Button icon={<Coffee />} size="large" iconRight>
+          <Button icon={<Coffee />} flat primary large iconRight>
             Icon
           </Button>
         </Box.Content>

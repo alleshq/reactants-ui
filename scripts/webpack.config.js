@@ -99,6 +99,13 @@ module.exports = async () => {
             plugins: ["styled-jsx/babel"],
           },
         },
+        {
+          test: /\.css$/i,
+          loader: "css-loader",
+          options: {
+            modules: true,
+          },
+        },
       ],
     },
   };

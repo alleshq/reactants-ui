@@ -6,11 +6,11 @@ import { useRouter } from "next/router";
 import {
   ReactantsThemes,
   ReactantsProvider,
-  CSSBaseline,
   Button,
   Header,
   Breadcrumb,
 } from "../components";
+import "../components/styles/global.css";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   const [customTheme, setCustomTheme] = useState<Partial<ReactantsThemes>>({});
@@ -18,6 +18,9 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
 
   const themeChangeHandle = (theme: Partial<ReactantsThemes>) => {
     window.localStorage.setItem("theme", theme.type ?? "light");
+    if (theme.type == "dark")
+      document.documentElement.classList.add("dark-mode");
+    else document.documentElement.classList.remove("dark-mode");
     setCustomTheme(theme);
   };
 
@@ -29,7 +32,6 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ReactantsProvider theme={customTheme}>
-      <CSSBaseline />
       <Header
         fixed
         logo={
@@ -47,7 +49,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
         }
       >
         <Button
-          size="small"
+          small
           onClick={() => {
             themeChangeHandle({
               type: customTheme.type == "dark" ? "light" : "dark",

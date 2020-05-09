@@ -1,0 +1,131 @@
+.btn {
+  --button-fg: var(--accents-2);
+  --button-bg: var(--accents-7);
+  --button-radius: var(--radius);
+  --button-padding: 0.75rem 1rem;
+  --button-min-width: 10rem;
+  --button-cursor: pointer;
+  --button-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.04),
+    0px 2px 6px rgba(0, 0, 0, 0.04);
+  --button-border-color: transparent;
+}
+
+.btn:disabled,
+.btn.loading {
+  --button-bg: var(--accents-1);
+  --button-fg: #666;
+  --button-cursor: default;
+  --button-box-shadow: none;
+  --button-border-color: var(--accents-2);
+}
+
+.btn.primary {
+  --button-fg: white;
+  --button-bg: var(--primary);
+}
+
+.btn.danger {
+  --button-fg: white;
+  --button-bg: var(--danger);
+}
+
+.btn.small {
+  --button-padding: 0.35rem 0.75rem;
+  --button-min-width: 3.5rem;
+}
+
+.btn.medium {
+  --button-padding: 0.5rem 1.5rem;
+  --button-min-width: 5rem;
+}
+
+.btn.large {
+  --button-padding: 1rem 2rem;
+  --button-min-width: 12.5rem;
+}
+
+.btn.flat {
+  --button-box-shadow: none;
+}
+
+.btn.flat.primary {
+  --button-fg: var(--primary);
+  --button-bg: var(--primary-015);
+}
+
+.btn.rounded {
+  --button-radius: 25px;
+}
+
+.btn.fluid {
+  width: 100%;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  transition: opacity 0.125s ease, transform 0.125s ease;
+  outline: none;
+  box-shadow: var(--button-box-shadow);
+  border: 1px solid var(--button-border-color);
+  border-radius: var(--button-radius);
+  box-sizing: border-box;
+  min-width: var(--button-min-width);
+  padding: var(--button-padding);
+  background: var(--button-bg);
+  cursor: var(--button-cursor);
+  user-select: none;
+  color: var(--button-fg);
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.btn:disabled,
+.btn.loading {
+  pointer-events: none;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn:active {
+  opacity: 1;
+  transform: scale(0.925);
+}
+
+.btn .icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  left: 22px;
+  right: auto;
+}
+
+.btn .icon.icon-right {
+  left: auto;
+  right: 22px;
+}
+
+.btn .icon svg {
+  height: 20px;
+  width: 20px;
+  color: var(--button-fg);
+}
+
+.btn .text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn.loading .text {
+  display: none;
+}
+
+.btn .loading-dots {
+  display: flex;
+  height: 1rem;
+}
