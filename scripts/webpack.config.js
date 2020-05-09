@@ -104,6 +104,7 @@ module.exports = async () => {
           loader: "css-loader",
           options: {
             modules: true,
+            esModule: true,
           },
         },
       ],
