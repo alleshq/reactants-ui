@@ -32,22 +32,18 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ReactantsProvider theme={customTheme}>
-      <Header
-        fixed
-        logo={
-          <Breadcrumb>
-            <Link href="/" passHref>
-              <Breadcrumb.Item>
-                <h4 style={{ display: "inline" }}>Reactants</h4>
-              </Breadcrumb.Item>
-            </Link>
+      <Header>
+        <Breadcrumb>
+          <Link href="/" passHref>
+            <Breadcrumb.Item>
+              <h4 style={{ display: "inline" }}>Reactants</h4>
+            </Breadcrumb.Item>
+          </Link>
 
-            {router.pathname.includes("login") && (
-              <Breadcrumb.Item>Login</Breadcrumb.Item>
-            )}
-          </Breadcrumb>
-        }
-      >
+          {router.pathname.includes("login") && (
+            <Breadcrumb.Item>Login</Breadcrumb.Item>
+          )}
+        </Breadcrumb>
         <Button
           small
           onClick={() => {

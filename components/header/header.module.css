@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  background: var(--header-background);
+  backdrop-filter: saturate(180%) blur(5px);
+  border-bottom: 1px solid var(--accents-2);
+  z-index: 999;
+  padding: 0 5rem;
+}
+
+.header .nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 100%;
+}

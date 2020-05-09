@@ -16,6 +16,8 @@
   --accents-8: #111;
   --radius: 6.75px;
   --sans: "Inter", sans-serif;
+  --header-height: 65px;
+  --header-background: hsla(0, 0%, 100%, 0.8);
 }
 
 :root.dark-mode {
@@ -31,6 +33,7 @@
   --accents-3: #444444;
   --accents-2: #333333;
   --accents-1: #111111;
+  --header-background: hsla(0, 0%, 0%, 0.8);
 }
 
 html,
