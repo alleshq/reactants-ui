@@ -101,11 +101,16 @@ module.exports = async () => {
         },
         {
           test: /\.css$/i,
-          loader: "css-loader",
-          options: {
-            modules: true,
-            esModule: true,
-          },
+          use: [
+            "style-loader",
+            {
+              loader: "css-loader",
+              options: {
+                modules: true,
+                esModule: true,
+              },
+            },
+          ],
         },
       ],
     },
