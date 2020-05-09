@@ -20,6 +20,13 @@
   --button-bg: var(--danger);
 }
 
+.btn.secondary {
+  --button-fg: var(--accents-6);
+  --button-bg: transparent;
+  --button-border-color: var(--accents-2);
+  --button-box-shadow: none;
+}
+
 .btn:disabled,
 .btn.loading {
   --button-bg: var(--accents-1);

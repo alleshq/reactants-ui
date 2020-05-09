@@ -104,6 +104,8 @@ export default () => {
         <Box.Content>
           <Button>Default</Button>
           <Spacer y={0.5} />
+          <Button secondary>Secondary</Button>
+          <Spacer y={0.5} />
           <Button primary>Primary</Button>
           <Spacer y={0.5} />
           <Button danger>Danger</Button>

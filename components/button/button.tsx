@@ -6,6 +6,7 @@ import styles from "./button.module.css";
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   primary?: boolean;
   danger?: boolean;
+  secondary?: boolean;
   small?: boolean;
   medium?: boolean;
   large?: boolean;
@@ -22,6 +23,7 @@ export const Button: React.FC<Props> = memo<Props>(
   ({
     primary,
     danger,
+    secondary,
     small,
     medium,
     large,
@@ -42,6 +44,7 @@ export const Button: React.FC<Props> = memo<Props>(
         className={cx(styles.btn, {
           [styles.primary]: primary,
           [styles.danger]: danger,
+          [styles.secondary]: secondary,
           [styles.small]: small,
           [styles.medium]: medium,
           [styles.large]: large,
