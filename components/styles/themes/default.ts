@@ -8,8 +8,8 @@ import {
 export const colors: ReactantsThemesColors = {
   background: "#ffffff",
   foreground: "#000000",
-  primary: "#0055ff",
-  danger: "#ff3333",
+  primary: "#23539e",
+  danger: "#ff5252",
   grey1: "#fafafa",
   grey2: "#eaeaea",
   grey3: "#999",

@@ -16,6 +16,8 @@ export const getButtonColors = (
   type: ButtonKinds,
   importance: ButtonImportance
 ): ButtonColorGroup => {
+  const opacity = theme.type == "light" ? "11" : "2f";
+
   const colors: {
     [key in ButtonKinds]: { [key in ButtonImportance]: ButtonColorGroup };
   } = {
@@ -43,12 +45,12 @@ export const getButtonColors = (
         border: theme.colors.primary,
       },
       medium: {
-        bg: `${theme.colors.primary}11`,
+        bg: `${theme.colors.primary}${opacity}`,
         fg: theme.colors.primary,
         border: "transparent",
       },
       low: {
-        bg: `${theme.colors.primary}11`,
+        bg: `${theme.colors.primary}${opacity}`,
         fg: theme.colors.primary,
         border: "transparent",
       },
@@ -60,12 +62,12 @@ export const getButtonColors = (
         border: theme.colors.danger,
       },
       medium: {
-        bg: `${theme.colors.danger}11`,
+        bg: `${theme.colors.danger}${opacity}`,
         fg: theme.colors.danger,
-        border: `${theme.colors.danger}11`,
+        border: `${theme.colors.danger}${opacity}`,
       },
       low: {
-        bg: `${theme.colors.danger}11`,
+        bg: `${theme.colors.danger}${opacity}`,
         fg: theme.colors.danger,
         border: "transparent",
       },
