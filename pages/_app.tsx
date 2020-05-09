@@ -35,15 +35,20 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
       <Header>
         <Breadcrumb>
           <Link href="/" passHref>
-            <Breadcrumb.Item>
-              <h4 style={{ display: "inline" }}>Reactants</h4>
-            </Breadcrumb.Item>
+            <Breadcrumb.Item as="h4" text="Reactants" />
           </Link>
 
-          {router.pathname.includes("login") && (
-            <Breadcrumb.Item>Login</Breadcrumb.Item>
-          )}
+          {router.pathname
+            .split("/")
+            .filter((path) => path != "")
+            .map((path, i) => (
+              <Breadcrumb.Item
+                key={i}
+                text={path.charAt(0).toUpperCase() + path.slice(1)}
+              />
+            ))}
         </Breadcrumb>
+
         <Button
           small
           onClick={() => {

@@ -1,41 +1,52 @@
-import React, { memo } from "react";
-import { BreadcrumbItem } from "./breadcrumb-item";
+import React, { memo, forwardRef } from "react";
+import styles from "./breadcrumb.module.css";
 
 const Breadcrumb: React.FC = memo(({ children }) => {
   return (
-    <div>
-      {children &&
-        React.Children.map(children, (child, i) => (
-          <span>
-            {child && i != 0 && <span className="divider"></span>}
-            {child}
-          </span>
-        ))}
-
-      <style jsx>{`
-        span {
-          display: inline-flex;
-          align-items: center;
-        }
-
-        .divider {
-          opacity: 0.6;
-          display: inline-block;
-          height: 16px;
-          margin: 0 10px -2px;
-          width: 8px;
-          user-select: none;
-          pointer-events: none;
-          background: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNLjUgMTUuNWw3LTE1IiBzdHJva2U9IiNDOEM4QzgiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPjwvc3ZnPg==);
-        }
-      `}</style>
+    <div className={styles.breadcrumb}>
+      {React.Children.map(children, (child, i) => (
+        <>
+          {i != 0 && <span className={styles.divider}></span>}
+          {child}
+        </>
+      ))}
     </div>
   );
 });
 
-type BreadcrumbWithOtherComponents = typeof Breadcrumb & {
+interface Props {
+  href?: string;
+  as?: keyof JSX.IntrinsicElements;
+  text?: string;
+}
+
+export const BreadcrumbItem: React.FC<Props> = memo<Props>(
+  forwardRef<any, Props>(
+    ({ children, as = "span", text, href, ...props }, ref) => {
+      const Component = as;
+
+      return (
+        <div className={styles.item}>
+          <Component style={{ margin: 0, padding: 0 }} {...props}>
+            {href ? (
+              <a className={styles.a} href={href} ref={ref}>
+                {text || children}
+              </a>
+            ) : (
+              text || children
+            )}
+          </Component>
+        </div>
+      );
+    }
+  )
+);
+
+type BreadcrumbWithSubcomponents = typeof Breadcrumb & {
   Item: typeof BreadcrumbItem;
 };
 
-const BreadcrumbWithOtherComponents = Breadcrumb as BreadcrumbWithOtherComponents;
-export { BreadcrumbWithOtherComponents as Breadcrumb };
+const BreadcrumbWithSubcomponents = Breadcrumb as BreadcrumbWithSubcomponents;
+BreadcrumbWithSubcomponents.Item = BreadcrumbItem;
+
+export { BreadcrumbWithSubcomponents as Breadcrumb };

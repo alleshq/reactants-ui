@@ -12,6 +12,7 @@ import {
 } from "../components";
 import Layout from "../lib/layout";
 import ExampleBlock from "../lib/example-block";
+import Link from "next/link";
 
 export default () => {
   const avatar = "https://github.com/identicons/danteissaias.png";
@@ -199,13 +200,17 @@ export default () => {
         <Box.Header>Default</Box.Header>
         <Box.Content>
           <Breadcrumb>
-            <Breadcrumb.Item href="/">
-              <h4 style={{ display: "inline" }}>Paper</h4>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>
-              <Avatar src={avatar} size={25} />
-            </Breadcrumb.Item>
-            <Breadcrumb.Item>Announcing Reactants 2.0</Breadcrumb.Item>
+            <Link href="/" passHref>
+              <Breadcrumb.Item as="h4" text="Reactants" />
+            </Link>
+
+            <Link href="/" passHref>
+              <Breadcrumb.Item>
+                <Avatar src={avatar} size={25} />
+              </Breadcrumb.Item>
+            </Link>
+
+            <Breadcrumb.Item text="Announcing Reactants 2.0" />
           </Breadcrumb>
         </Box.Content>
       </Box>
