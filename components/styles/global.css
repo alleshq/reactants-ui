@@ -21,6 +21,8 @@
 :root.dark-mode {
   --foreground: white;
   --background: black;
+  --primary: hsla(215, 65%, 50%, 1);
+  --primary-015: hsla(215, 65%, 50%, 0.15);
   --accents-8: #fafafa;
   --accents-7: #eaeaea;
   --accents-6: #999999;
