@@ -200,10 +200,12 @@ export default () => {
         <Box.Content>
           <Breadcrumb>
             <Breadcrumb.Item href="/">
-              <h4 style={{ display: "inline" }}>Reactants</h4>
+              <h4 style={{ display: "inline" }}>Paper</h4>
             </Breadcrumb.Item>
-            <Breadcrumb.Item>Is</Breadcrumb.Item>
-            <Breadcrumb.Item>Cool</Breadcrumb.Item>
+            <Breadcrumb.Item>
+              <Avatar src={avatar} size={25} />
+            </Breadcrumb.Item>
+            <Breadcrumb.Item>Announcing Reactants 2.0</Breadcrumb.Item>
           </Breadcrumb>
         </Box.Content>
       </Box>

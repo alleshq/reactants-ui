@@ -6,13 +6,18 @@ const Breadcrumb: React.FC = memo(({ children }) => {
     <div>
       {children &&
         React.Children.map(children, (child, i) => (
-          <>
+          <span>
             {child && i != 0 && <span className="divider"></span>}
             {child}
-          </>
+          </span>
         ))}
 
       <style jsx>{`
+        span {
+          display: inline-flex;
+          align-items: center;
+        }
+
         .divider {
           opacity: 0.6;
           display: inline-block;
