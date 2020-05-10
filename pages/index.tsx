@@ -207,6 +207,17 @@ export default () => {
 
       <Spacer y={1} />
 
+      <Box>
+        <Box.Header>Icon</Box.Header>
+        <Box.Content>
+          <Input icon={<Coffee />} placeholder="Left Icon" />
+          <Spacer y={0.5} />
+          <Input iconRight={<Coffee />} placeholder="Right Icon" />
+        </Box.Content>
+      </Box>
+
+      <Spacer y={1} />
+
       <h3>Avatar</h3>
 
       <Spacer y={1} />

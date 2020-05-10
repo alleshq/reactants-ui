@@ -3,6 +3,7 @@
   --input-border-color: var(--accents-2);
   --input-color: var(--foreground);
   --input-width: max-content;
+  --input-placeholder-color: var(--accents-3);
 }
 
 .input-container.focused {
@@ -11,10 +12,12 @@
 
 .input-container.disabled {
   --input-background: var(--accents-1);
+  --input-placeholder-color: var(--accents-4);
 }
 
 .input-container.errored {
   --input-border-color: var(--danger);
+  --input-placeholder-color: var(--danger-075);
 }
 
 .input-container.fluid {
@@ -101,9 +104,6 @@
   transition: opacity 0.2s ease;
 }
 
-.input::placeholder,
-.input::-moz-placeholder,
-.input:-ms-input-placeholder,
-.input::-webkit-input-placeholder {
-  color: var(--accents-3);
+.input::placeholder {
+  color: var(--input-placeholder-color);
 }
