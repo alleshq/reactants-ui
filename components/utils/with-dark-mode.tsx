@@ -39,7 +39,6 @@ export const withTheme = (Component: any) => {
     }
 
     onStorage = (event: any) => {
-      console.log(event);
       if (event.key !== "reactants-theme") return;
       const value = event.newValue;
       if (value !== this.state.theme) {

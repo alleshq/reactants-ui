@@ -12,7 +12,7 @@ import {
   useTheme,
   setTheme,
 } from "../components";
-import "../components/styles/global.css";
+import "../components/global.css";
 import { Search } from "react-feather";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
