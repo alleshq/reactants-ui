@@ -68,6 +68,7 @@ export default {
         ["@babel/preset-react", { useBuiltIns: true }],
         "@babel/preset-env",
       ],
+      plugins: ["@babel/proposal-class-properties"],
     }),
     postcss({
       plugins: [postcssImport(), postcssEnv()],
