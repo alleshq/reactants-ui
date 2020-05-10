@@ -1,26 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Button, Header, Breadcrumb, Input } from "../components";
+import {
+  Button,
+  Header,
+  Breadcrumb,
+  Input,
+  withTheme,
+  useTheme,
+  setTheme,
+} from "../components";
 import "../components/styles/global.css";
 import { Search } from "react-feather";
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
-  const [theme, setTheme] = useState<"dark" | "light">("light");
-
-  useEffect(() => {
-    window.localStorage.setItem("theme", theme);
-    if (theme == "dark") document.documentElement.classList.add("dark-mode");
-    else document.documentElement.classList.remove("dark-mode");
-  }, [theme]);
-
-  useEffect(() => {
-    const theme = localStorage.getItem("theme") ?? "light";
-    setTheme(theme as "light" | "dark");
-  });
+  const theme = useTheme();
 
   return (
     <>
@@ -43,12 +40,14 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
 
         <Input icon={<Search />} placeholder="Search" />
 
-        <Button
-          small
-          onClick={() => setTheme(theme == "dark" ? "light" : "dark")}
-        >
-          {theme.charAt(0).toUpperCase() + theme.substr(1)}
-        </Button>
+        <div style={{ width: 100 }}>
+          <Button
+            small
+            onClick={() => setTheme(theme == "dark" ? "light" : "dark")}
+          >
+            {theme === "dark" ? "Light" : "Dark"}
+          </Button>
+        </div>
       </Header>
 
       <Component {...pageProps} />
@@ -56,4 +55,4 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   );
 };
 
-export default Application;
+export default withTheme(Application);
