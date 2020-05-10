@@ -1,6 +1,7 @@
 import React, { memo, HTMLAttributes } from "react";
 import cx from "classnames";
-import { Loading } from "../loading";
+
+import { Loading } from "~/components/loading";
 import styles from "./button.module.css";
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {

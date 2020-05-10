@@ -14,7 +14,7 @@
     "docs-build": "yarn docs-collect && next build",
     "docs-start": "next start",
     "clear": "rm -rf dist",
-    "build": "yarn run clear && rollup -c scripts/rollup.config.js && tsc -p scripts/tsconfig.json && cp components/styles/global.css dist/global.css",
+    "build": "yarn run clear && rollup -c scripts/rollup.config.js && tsc -p scripts/tsconfig.json && cp components/global.css dist/global.css",
     "release": "yarn run build && yarn publish --access public --non-interactive"
   },
   "dependencies": {
@@ -39,6 +39,7 @@
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
     "@wessberg/rollup-plugin-ts": "^1.2.24",
+    "babel-plugin-module-resolver": "^4.0.0",
     "next": "^9.3.6",
     "node-eval": "^2.0.0",
     "postcss-import": "^12.0.1",

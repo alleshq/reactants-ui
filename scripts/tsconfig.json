@@ -19,7 +19,10 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "files": ["../components/index.ts", "../next-env.d.ts"],
   "exclude": ["node_modules", "lib", "es"]
