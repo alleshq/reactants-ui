@@ -4,6 +4,9 @@
   "main": "dist/components/index.js",
   "module": "dist/components/index.js",
   "types": "dist/components/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
   "license": "MIT",
   "description": "Alles React UI library.",
   "scripts": {
