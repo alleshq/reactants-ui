@@ -43,6 +43,11 @@ export default {
       extensions,
       include: ["components/**/*"],
       exclude: ["node_modules/**", "**/*.css"],
+      presets: [
+        "@babel/preset-typescript",
+        ["@babel/preset-react", { useBuiltIns: true }],
+        "@babel/preset-env",
+      ],
     }),
     postcss({
       plugins: [postcssImport(), postcssEnv()],
