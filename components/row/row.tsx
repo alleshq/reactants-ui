@@ -1,5 +1,5 @@
 import React, { memo, useMemo } from "react";
-import { useTheme } from "../styles/use-theme";
+import styles from "./row.module.css";
 
 type Justify = "start" | "end" | "center" | "space-around" | "space-between";
 type Align = "top" | "middle" | "bottom";
@@ -35,32 +35,34 @@ export const Row: React.FC<Props> = memo<Props>(
     justify = "start",
     align = "top",
     component = "div",
-    className = "",
     children,
+    style,
     ...props
   }) => {
     const Component = component;
-    const theme = useTheme();
     const { justifyValue, alignValue } = useMemo(
       () => getFlexAlignment(justify, align),
       [justify, align]
     );
 
     return (
-      <Component className={`row ${className}`} {...props}>
+      <Component
+        className={styles.row}
+        style={
+          {
+            ...{
+              marginLeft: `calc(${gap} * var(--gap) / 2)`,
+              marginRight: `calc(${gap} * var(--gap) / 2)`,
+              "--row-gap": `calc(${gap} * var(--gap))`,
+              justifyContent: justifyValue,
+              alignItems: alignValue,
+            },
+            ...style,
+          } as React.CSSProperties
+        }
+        {...props}
+      >
         {children}
-        <style jsx>{`
-          .row {
-            display: flex;
-            position: relative;
-            box-sizing: border-box;
-            margin-left: calc(${gap} * ${theme.layout.gap} / 2);
-            margin-right: calc(${gap} * ${theme.layout.gap} / 2);
-            --row-gap: calc(${gap} * ${theme.layout.gap});
-            justify-content: ${justifyValue};
-            align-items: ${alignValue};
-          }
-        `}</style>
       </Component>
     );
   }

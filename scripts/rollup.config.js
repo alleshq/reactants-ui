@@ -68,7 +68,6 @@ export default {
         ["@babel/preset-react", { useBuiltIns: true }],
         "@babel/preset-env",
       ],
-      plugins: ["styled-jsx/babel"],
     }),
     postcss({
       plugins: [postcssImport(), postcssEnv()],

@@ -1,5 +1,3 @@
-/// <reference types="styled-jsx" />
-
 export * from "./styles/themes";
 export * from "./styles/use-theme";
 export * from "./avatar";

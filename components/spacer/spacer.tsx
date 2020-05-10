@@ -1,4 +1,5 @@
 import React, { memo } from "react";
+import styles from "./spacer.module.css";
 
 interface Props extends React.HTMLAttributes<any> {
   x?: number;
@@ -20,17 +21,11 @@ export const Spacer: React.FC<Props> = memo<Props>(
     const top = getMargin(y);
 
     return (
-      <span className={className} {...props}>
-        <style jsx>{`
-          span {
-            display: block;
-            height: 1px;
-            width: 1px;
-            margin-left: ${left};
-            margin-top: ${top};
-          }
-        `}</style>
-      </span>
+      <span
+        className={styles.spacer}
+        style={{ marginLeft: left, marginTop: top }}
+        {...props}
+      ></span>
     );
   }
 );
