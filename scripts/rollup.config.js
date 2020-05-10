@@ -4,17 +4,34 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import postcssImport from "postcss-import";
 import postcssEnv from "postcss-preset-env";
+import fs from "fs";
+import nodeEval from "node-eval";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
-const globals = {
-  react: "React",
-  "react-dom": "ReactDOM",
-};
-
-const globalModules = Object.keys(globals);
-
 const sourceMap = true;
+
+export function getModuleExports(moduleId) {
+  const id = require.resolve(moduleId);
+  const moduleOut = nodeEval(fs.readFileSync(id).toString(), id);
+  let result = [];
+  const excludeExports = /^(default|__)/;
+  if (moduleOut && typeof moduleOut === "object") {
+    result = Object.keys(moduleOut).filter(
+      (name) => !excludeExports.test(name)
+    );
+  }
+
+  return result;
+}
+
+export function getNamedExports(moduleIds) {
+  const result = {};
+  moduleIds.forEach((id) => {
+    result[id] = getModuleExports(id);
+  });
+  return result;
+}
 
 export default {
   input: "components/index.ts",
@@ -22,7 +39,6 @@ export default {
     {
       file: "dist/index.js",
       format: "iife",
-      globals,
       sourcemap: sourceMap,
       preferConst: true,
     },
@@ -30,8 +46,8 @@ export default {
   plugins: [
     resolve({ extensions }),
     commonjs({
-      include: "**/node_modules/**",
-      namedExports: {},
+      include: /node_modules/,
+      namedExports: getNamedExports(["react", "react-dom", "classnames"]),
     }),
     babel({
       sourceMap,
@@ -57,5 +73,4 @@ export default {
       preserveModules: true,
     }),
   ],
-  external: (id) => globalModules.includes(id),
 };
