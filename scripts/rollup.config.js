@@ -6,6 +6,14 @@ import postcssImport from "postcss-import";
 import postcssEnv from "postcss-preset-env";
 import fs from "fs";
 import nodeEval from "node-eval";
+import path from "path";
+
+const pkg = JSON.parse(
+  fs.readFileSync(path.resolve("./package.json"), "utf-8")
+);
+const external = Object.keys(pkg.dependencies || {}).concat(
+  Object.keys(pkg.peerDependencies || {})
+);
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 
@@ -34,6 +42,7 @@ export function getNamedExports(moduleIds) {
 }
 
 export default {
+  external,
   input: "components/index.ts",
   output: [
     {
