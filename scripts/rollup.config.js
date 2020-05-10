@@ -38,7 +38,7 @@ export default {
   output: [
     {
       file: "dist/index.js",
-      format: "iife",
+      format: "cjs",
       sourcemap: sourceMap,
       preferConst: true,
     },
