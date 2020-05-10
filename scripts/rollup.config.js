@@ -10,7 +10,6 @@ const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const globals = {
   react: "React",
   "react-dom": "ReactDOM",
-  "core-js": "core-js",
 };
 
 const globalModules = Object.keys(globals);
@@ -18,15 +17,11 @@ const globalModules = Object.keys(globals);
 const sourceMap = true;
 
 export default {
-  input: {
-    index: "components/index.ts",
-  },
-  preserveModules: true,
-  treeshake: false,
+  input: "components/index.ts",
   output: [
     {
-      dir: "dist",
-      format: "cjs",
+      file: "dist/index.js",
+      format: "iife",
       globals,
       sourcemap: sourceMap,
       preferConst: true,
@@ -58,9 +53,9 @@ export default {
       },
       sourceMap,
       configFile: false,
-      extract: true,
+      extract: false,
       preserveModules: true,
     }),
   ],
-  external: (id) => globalModules.includes(id) || /core-js/.test(id),
+  external: (id) => globalModules.includes(id),
 };
