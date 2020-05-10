@@ -190,13 +190,9 @@ export default () => {
       <Spacer y={1} />
 
       <Box>
-        <Box.Header>Widths</Box.Header>
+        <Box.Header>Fluid</Box.Header>
         <Box.Content>
-          <Input placeholder="Width: 200px" width={200} />
-          <Spacer y={0.5} />
-          <Input placeholder="Width: 50%" width="50%" />
-          <Spacer y={0.5} />
-          <Input placeholder="Width: 100%" width="100%" />
+          <Input placeholder="Width: 100%" fluid />
         </Box.Content>
       </Box>
 

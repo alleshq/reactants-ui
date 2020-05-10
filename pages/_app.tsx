@@ -51,7 +51,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
             ))}
         </Breadcrumb>
 
-        <Input icon={<Search />} placeholder="Search" width="50%" />
+        <Input icon={<Search />} placeholder="Search" />
 
         <Button
           small

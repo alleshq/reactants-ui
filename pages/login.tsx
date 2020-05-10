@@ -29,7 +29,7 @@ export default () => {
                 placeholder="gilfoyle@piedpiper.com"
                 errored={errored}
                 error="Invalid email address"
-                width="100%"
+                fluid
                 onChange={() => setErrored(false)}
               />
 
@@ -40,7 +40,7 @@ export default () => {
                 placeholder="•••••••••••"
                 errored={errored}
                 error="Invalid password"
-                width="100%"
+                fluid
                 onChange={() => setErrored(false)}
               />
 
