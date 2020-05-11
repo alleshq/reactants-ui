@@ -57,7 +57,7 @@ export const SettingsExample = () => (
 
 export const LoginExample = () => (
   <div style={{ padding: 25, maxWidth: 500 }}>
-    <h3>Login</h3>
+    <h3>Log In</h3>
     <Box>
       <Box.Header>Please enter your credentials to continue</Box.Header>
       <Box.Content>
