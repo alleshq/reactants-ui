@@ -2,6 +2,10 @@
 
 Alles Reactants Components for React (@reactants/ui).
 
+### Instalation
+
+`yarn add @reactants/ui`
+
 ### Usage
 
 To support theming you must wrap the Next.js `Application` with the `withTheme` HOC.
