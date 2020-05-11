@@ -1,4 +1,4 @@
-import { memo } from "react";
+import React, { memo } from "react";
 import styles from "./col.module.css";
 
 interface Props extends React.HTMLAttributes<any> {
