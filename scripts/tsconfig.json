@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "../",
-    "outFile": "../dist/index.d.ts",
+    "outDir": "../dist",
     "declaration": true,
     "emitDeclarationOnly": true,
     "strictNullChecks": true,
@@ -25,5 +25,5 @@
     }
   },
   "files": ["../components/index.ts", "../next-env.d.ts"],
-  "exclude": ["node_modules", "lib", "es"]
+  "exclude": ["node_modules"]
 }
