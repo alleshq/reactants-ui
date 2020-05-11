@@ -1,7 +1,7 @@
 import React, { memo, HTMLAttributes } from "react";
 import cx from "classnames";
 
-import { Loading } from "~/src/loading";
+import { Loading } from "../loading";
 import styles from "./button.module.css";
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
@@ -15,6 +15,9 @@ interface Props extends HTMLAttributes<HTMLButtonElement> {
   rounded?: boolean;
   loading?: boolean;
   fluid?: boolean;
+  inline?: boolean;
+  right?: boolean;
+  left?: boolean;
   icon?: React.ReactNode;
   iconRight?: boolean;
   disabled?: boolean;
@@ -36,6 +39,9 @@ export const Button: React.FC<Props> = memo<Props>(
     iconRight,
     disabled,
     children,
+    inline,
+    right,
+    left,
     ...props
   }) => {
     return (
@@ -53,6 +59,9 @@ export const Button: React.FC<Props> = memo<Props>(
           [styles.rounded]: rounded,
           [styles.loading]: loading,
           [styles.fluid]: fluid,
+          [styles.inline]: inline,
+          [styles.left]: left,
+          [styles.right]: right,
         })}
         {...props}
       >

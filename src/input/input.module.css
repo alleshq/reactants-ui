@@ -1,13 +1,12 @@
 .input-container {
-  --input-background: transparent;
-  --input-border-color: var(--accents-2);
+  --input-background: #efefef;
   --input-color: var(--foreground);
   --input-width: max-content;
-  --input-placeholder-color: var(--accents-3);
+  --input-placeholder-color: var(--accents-5);
 }
 
 .input-container.focused {
-  --input-border-color: var(--accents-4);
+  --input-placeholder-color: var(--accents-3);
 }
 
 .input-container.disabled {
@@ -16,7 +15,6 @@
 }
 
 .input-container.errored {
-  --input-border-color: var(--danger);
   --input-placeholder-color: var(--danger-075);
 }
 
@@ -31,8 +29,8 @@
   user-select: none;
   background: var(--input-background);
   border-radius: var(--radius);
-  border: 1px solid var(--input-border-color);
-  transition: border 0.2s ease 0s, color 0.2s ease 0s;
+  border: none;
+  transition: background 0.2s ease 0s, color 0.2s ease 0s;
   width: var(--input-width);
 }
 
@@ -106,4 +104,5 @@
 
 .input::placeholder {
   color: var(--input-placeholder-color);
+  transition: color 0.2s ease;
 }

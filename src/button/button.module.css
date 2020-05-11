@@ -65,6 +65,7 @@
   display: block;
   transition: opacity 0.125s ease, transform 0.125s ease;
   outline: none;
+  box-shadow: 0 0 3px hsla(0, 0%, 0%, 0.05);
   border: 1px solid var(--button-border-color);
   border-radius: var(--button-radius);
   box-sizing: border-box;
@@ -75,12 +76,27 @@
   user-select: none;
   color: var(--button-fg);
   font-family: var(--sans);
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.btn.inline {
+  display: inline-block;
+}
+
+.btn.right {
+  float: right;
+}
+
+.btn.left {
+  float: left;
 }
 
 .btn:disabled,
 .btn.loading {
   pointer-events: none;
+  box-shadow: none;
 }
 
 .btn:hover {
@@ -90,6 +106,7 @@
 .btn:active {
   opacity: 1;
   transform: scale(0.925);
+  box-shadow: none;
 }
 
 .btn .icon {

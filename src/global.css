@@ -2,8 +2,8 @@
 
 :root {
   --foreground: black;
-  --background: white;
-  --primary: hsla(215, 65%, 40%, 1);
+  --background: hsla(0, 0, 85%, 1);
+  --primary: hsla(220, 90%, 60%, 1);
   --primary-015: hsla(215, 65%, 40%, 0.15);
   --danger: hsla(0, 100%, 65%, 1);
   --danger-075: hsla(0, 100%, 65%, 0.75);
@@ -15,7 +15,7 @@
   --accents-6: #444;
   --accents-7: #333;
   --accents-8: #111;
-  --radius: 6.75px;
+  --radius: 15px;
   --sans: "Inter", sans-serif;
   --header-height: 65px;
   --header-background: hsla(0, 0%, 100%, 0.8);
