@@ -24,6 +24,6 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    postcss({ extract: true }),
+    postcss({ extract: "dist/index.css" }),
   ],
 };

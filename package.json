@@ -10,9 +10,6 @@
   "license": "MIT",
   "description": "Alles React UI library.",
   "scripts": {
-    "dev": "next dev",
-    "docs-build": "yarn docs-collect && next build",
-    "docs-start": "next start",
     "clear": "rm -rf dist",
     "build": "yarn run clear && rollup -c rollup.config.js",
     "release": "yarn run build && yarn publish --access public --non-interactive"
@@ -30,7 +27,6 @@
     "@types/classnames": "^2.2.10",
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
-    "next": "^9.4.0",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

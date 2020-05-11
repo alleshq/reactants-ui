@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import Head from "next/head";
 
 import { getTheme, Theme } from "./dark-mode";
 
@@ -28,6 +27,20 @@ export const withTheme = (Component: any) => {
     }
 
     componentDidMount() {
+      try {
+        var query = window.matchMedia("(prefers-color-scheme: dark)");
+        var preference = window.localStorage.getItem("reactants-theme");
+
+        if (preference) {
+          if (
+            (preference === "system" && query.matches) ||
+            preference === "dark"
+          ) {
+            document.documentElement.classList.add("dark-mode");
+          }
+        }
+      } catch (e) {}
+
       this.setState((state) => ({ ...state, loaded: true }));
       window.addEventListener("storage", this.onStorage);
       window.addEventListener("reactants-theme", this.onStorage);
@@ -51,26 +64,9 @@ export const withTheme = (Component: any) => {
 
       return (
         <ThemeContext.Provider value={value}>
-          <Head>
-            <script dangerouslySetInnerHTML={{ __html: darkModeScript }} />
-          </Head>
-
           {this.state.loaded && <Component {...this.props} />}
         </ThemeContext.Provider>
       );
     }
   };
 };
-
-const darkModeScript = `
-try {
-  var query = window.matchMedia("(prefers-color-scheme: dark)");
-  var preference = window.localStorage.getItem("reactants-theme");
-
-  if (preference) {
-    if ((preference === "system" && query.matches) || preference === "dark") {
-      document.documentElement.classList.add("dark-mode");
-    }
-  }
-} catch (e) {}
-`;
