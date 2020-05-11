@@ -2,12 +2,14 @@
 
 :root {
   --foreground: black;
-  --background: hsla(0, 0, 85%, 1);
+  --background: var(--accents-15);
+  --surface: white;
   --primary: hsla(217, 64%, 38%, 1);
   --primary-015: hsla(217, 64%, 38%, 0.15);
   --danger: hsla(0, 100%, 65%, 1);
   --danger-075: hsla(0, 100%, 65%, 0.75);
   --accents-1: #fafafa;
+  --accents-15: #efefef;
   --accents-2: #eaeaea;
   --accents-3: #999;
   --accents-4: #888;
@@ -27,6 +29,7 @@
 :root.dark-mode {
   --foreground: white;
   --background: black;
+  --surface: var(--background);
   --primary: hsla(217, 64%, 45%, 1);
   --primary-015: hsla(217, 64%, 38%, 0.15);
   --accents-8: #fafafa;
