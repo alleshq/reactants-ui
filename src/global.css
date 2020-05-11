@@ -21,6 +21,7 @@
   --header-background: hsla(0, 0%, 100%, 0.8);
   --gap: 16px;
   --gap-half: 8px;
+  --box-border: none;
 }
 
 :root.dark-mode {
@@ -37,6 +38,7 @@
   --accents-2: #333333;
   --accents-1: #111111;
   --header-background: hsla(0, 0%, 0%, 0.8);
+  --box-border: 1px solid var(--accents-2);
 }
 
 html,

@@ -1,5 +1,5 @@
 .box {
-  border: none;
+  border: var(--box-border);
   border-radius: var(--radius);
   box-shadow: 0 0px 5px hsla(0, 0%, 0%, 0.1);
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { Box } from "./box";
 import { Input } from "../input";
 import { Spacer } from "../spacer";
@@ -6,6 +7,7 @@ import { Button } from "../button";
 
 export default {
   title: "Boxes",
+  decorators: [withKnobs],
 };
 
 export const DefaultBox = () => (
@@ -66,7 +68,7 @@ export const LoginExample = () => (
         <a href="#" style={{ color: "var(--accents-4)" }}>
           Forgot password?
         </a>
-        <Button primary small right>
+        <Button primary small right loading={boolean("Loading", false)}>
           Log In
         </Button>
       </Box.Footer>

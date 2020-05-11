@@ -1,5 +1,5 @@
 .input-container {
-  --input-background: #efefef;
+  --input-background: var(--accents-2);
   --input-color: var(--foreground);
   --input-width: max-content;
   --input-placeholder-color: var(--accents-5);
