@@ -117,3 +117,23 @@ export const DisabledState = () => (
     </Button>
   </Gap>
 );
+
+export const LoadingState = () => (
+  <Gap>
+    <Button loading large onClick={action("clicked")}>
+      Large
+    </Button>
+
+    <Button loading onClick={action("clicked")}>
+      Default
+    </Button>
+
+    <Button loading medium onClick={action("clicked")}>
+      Medium
+    </Button>
+
+    <Button loading small onClick={action("clicked")}>
+      Small
+    </Button>
+  </Gap>
+);
