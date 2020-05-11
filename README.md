@@ -2,7 +2,7 @@
 
 Alles Reactants Components for React (@reactants/ui).
 
-### Instalation
+### Installation
 
 `yarn add @reactants/ui`
 
