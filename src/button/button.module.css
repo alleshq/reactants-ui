@@ -20,7 +20,7 @@
 
 .btn.secondary {
   --button-fg: var(--accents-6);
-  --button-bg: transparent;
+  --button-bg: var(--surface);
   --button-border-color: var(--accents-2);
 }
 
