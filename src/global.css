@@ -4,7 +4,7 @@
   --foreground: black;
   --background: hsla(0, 0, 85%, 1);
   --primary: hsla(217, 64%, 38%, 1);
-  --primary-015: hsla(215, 65%, 40%, 0.15);
+  --primary-015: hsla(217, 64%, 38%, 0.15);
   --danger: hsla(0, 100%, 65%, 1);
   --danger-075: hsla(0, 100%, 65%, 0.75);
   --accents-1: #fafafa;
@@ -27,8 +27,8 @@
 :root.dark-mode {
   --foreground: white;
   --background: black;
-  --primary: hsla(215, 65%, 50%, 1);
-  --primary-015: hsla(215, 65%, 50%, 0.15);
+  --primary: hsla(217, 64%, 45%, 1);
+  --primary-015: hsla(217, 64%, 38%, 0.15);
   --accents-8: #fafafa;
   --accents-7: #eaeaea;
   --accents-6: #999999;

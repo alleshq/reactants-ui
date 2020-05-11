@@ -6,7 +6,7 @@
 }
 
 .input-container.focused {
-  --input-placeholder-color: var(--accents-3);
+  --input-placeholder-color: var(--accents-4);
 }
 
 .input-container.disabled {
