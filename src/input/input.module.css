@@ -30,7 +30,6 @@
   background: var(--input-background);
   border-radius: var(--radius);
   border: none;
-  transition: background 0.2s ease 0s, color 0.2s ease 0s;
   width: var(--input-width);
 }
 

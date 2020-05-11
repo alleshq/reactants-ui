@@ -5,5 +5,6 @@ module.exports = {
     "storybook-css-modules-preset",
     "@storybook/addon-actions/register",
     "@storybook/addon-knobs/register",
+    "storybook-dark-mode/register",
   ],
 };

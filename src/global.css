@@ -3,7 +3,7 @@
 :root {
   --foreground: black;
   --background: hsla(0, 0, 85%, 1);
-  --primary: hsla(220, 90%, 60%, 1);
+  --primary: hsla(217, 64%, 38%, 1);
   --primary-015: hsla(215, 65%, 40%, 0.15);
   --danger: hsla(0, 100%, 65%, 1);
   --danger-075: hsla(0, 100%, 65%, 0.75);
