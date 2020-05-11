@@ -25,16 +25,12 @@ export const SettingsExample = () => (
     <Box>
       <Box.Header
         style={{
-          overflow: "auto",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
         }}
       >
         Edit account information
-        <Button primary small right>
-          Save
-        </Button>
       </Box.Header>
       <Box.Content>
         <Input fluid label="Name" placeholder="John Doe" />
@@ -42,6 +38,19 @@ export const SettingsExample = () => (
         <Input fluid label="Email" placeholder="john@example.com" />
         <Spacer y={0.5} />
       </Box.Content>
+      <Box.Footer
+        style={{
+          overflow: "auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        Updates instantly across services
+        <Button primary small right>
+          Save
+        </Button>
+      </Box.Footer>
     </Box>
   </div>
 );
