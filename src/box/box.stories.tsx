@@ -4,6 +4,7 @@ import { Box } from "./box";
 import { Input } from "../input";
 import { Spacer } from "../spacer";
 import { Button } from "../button";
+import { Avatar } from "../avatar";
 
 export default {
   title: "Boxes",
@@ -21,8 +22,34 @@ export const DefaultBox = () => (
 
 export const SettingsExample = () => (
   <div style={{ padding: 25, maxWidth: 500 }}>
+    <h3>Dante</h3>
     <Box>
-      <Box.Content></Box.Content>
+      <Box.Content style={{display: "flex", alignItems: "center"}}>
+        <Avatar username="dante" size={80} />
+
+        <div style={{marginLeft: 20}}>
+            <a
+              href="#"
+              style={{
+                color: "var(--primary)",
+                marginTop: 7.5,
+                display: "block",
+                textDecoration: "none",
+              }}
+            >
+              @dante
+            </a>
+
+            <div style={{marginTop: 10}}>
+              <b>Alles+</b> (5 months)
+            </div>
+
+            <div style={{marginTop: 10}}>
+              <b>5</b> Rubies
+            </div>
+
+          </div>
+      </Box.Content>
     </Box>
     <Spacer />
     <h3>Profile</h3>

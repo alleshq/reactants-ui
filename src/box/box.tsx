@@ -44,7 +44,7 @@ type BoxContentProps = {
 const BoxContent: React.FC<BoxContentProps> = memo<BoxContentProps>(
   ({ children, padding = 20, ...props }) => {
     return (
-      <div {...props} style={{ padding }}>
+      <div {...props} style={{ padding, ...props.style }}>
         {children}
       </div>
     );
