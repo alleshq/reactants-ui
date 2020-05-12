@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, InputProps } from "./input";
+import { Input, Props as InputProps } from "./input";
 import { Eye, EyeOff } from "react-feather";
 
 interface Props extends InputProps {}

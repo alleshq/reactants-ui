@@ -3,7 +3,7 @@ import cx from "classnames";
 import styles from "./input.module.css";
 import { InputPassword } from "./input-password";
 
-interface Props {
+export interface Props {
   value?: string;
   fluid?: boolean;
   errored?: boolean;
@@ -23,8 +23,6 @@ interface Props {
   initialValue?: string;
   type?: string;
 }
-
-export type { Props as InputProps };
 
 const Input: React.FC<Props> = ({
   value,
