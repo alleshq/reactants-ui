@@ -1,8 +1,14 @@
-import React, { useState, useRef, useEffect, memo } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  memo,
+  HTMLAttributes,
+} from "react";
 import cx from "classnames";
 import styles from "./avatar.module.css";
 
-interface GenericAvatarProps {
+interface GenericAvatarProps extends HTMLAttributes<any> {
   src?: string;
   size?: number | string;
 }

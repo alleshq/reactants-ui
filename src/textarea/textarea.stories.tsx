@@ -24,4 +24,4 @@ export const ResizableTextarea = () => (
       </Box.Content>
     </Box>
   </div>
-)
+);

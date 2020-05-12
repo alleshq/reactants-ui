@@ -10,7 +10,7 @@ interface Props extends HTMLAttributes<HTMLTextAreaElement> {
 export const Textarea: React.FC<Props> = ({ resizable, label, ...props }) => {
   return (
     <>
-      { label && <label className={styles.label}>{label}</label> }
+      {label && <label className={styles.label}>{label}</label>}
 
       <textarea
         className={cx(styles.textarea, { [styles.resizable]: resizable })}
