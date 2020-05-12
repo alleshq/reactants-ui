@@ -1,4 +1,8 @@
 module.exports = function (plop) {
+  plop.setHelper("styleClass", function (text) {
+    return `{styles.${text}}`;
+  });
+
   plop.setGenerator("component", {
     description: "reusable design component",
     prompts: [
@@ -12,18 +16,23 @@ module.exports = function (plop) {
       {
         type: "add",
         path: "src/{{name}}/{{name}}.tsx",
-        templateFile: ".plop/component.hbs",
+        templateFile: "templates/component.tsx.hbs",
+      },
+      {
+        type: "add",
+        path: "src/{{name}}/{{name}}.module.css",
+        template: ".{{name}} { }",
       },
       {
         type: "add",
         path: "src/{{name}}/index.ts",
-        template: "export * from \"./{{name}}\";",
+        template: 'export * from "./{{name}}";',
       },
       {
         type: "append",
         path: "src/index.ts",
         separator: "",
-        template: "export * from \"./{{name}}\";",
+        template: 'export * from "./{{name}}";',
       },
     ],
   });
