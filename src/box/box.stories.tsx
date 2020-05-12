@@ -21,8 +21,12 @@ export const DefaultBox = () => (
 
 export const SettingsExample = () => (
   <div style={{ padding: 25, maxWidth: 500 }}>
-    <h3>Profile</h3>
     <Box>
+      <Box.Content></Box.Content>
+    </Box>
+    <Spacer />
+    <h3>Profile</h3>
+    <Box as="form">
       <Box.Header
         style={{
           display: "flex",

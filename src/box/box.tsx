@@ -1,13 +1,21 @@
 import React, { memo, HTMLAttributes } from "react";
 import styles from "./box.module.css";
 
-const Box: React.FC = memo(({ children, ...props }) => {
-  return (
-    <div className={styles.box} {...props}>
-      {children}
-    </div>
-  );
-});
+type Props = {
+  as?: keyof JSX.IntrinsicElements;
+};
+
+const Box: React.FC<Props> = memo<Props>(
+  ({ children, as = "div", ...props }) => {
+    const Component = as;
+
+    return (
+      <Component className={styles.box} {...props}>
+        {children}
+      </Component>
+    );
+  }
+);
 
 const BoxHeader: React.FC<HTMLAttributes<any>> = memo<HTMLAttributes<any>>(
   ({ children, ...props }) => {
@@ -30,17 +38,15 @@ const BoxFooter: React.FC<HTMLAttributes<any>> = memo<HTMLAttributes<any>>(
 );
 
 type BoxContentProps = {
-  as?: keyof JSX.IntrinsicElements;
   padding?: number | string;
 } & React.HTMLAttributes<any>;
 
 const BoxContent: React.FC<BoxContentProps> = memo<BoxContentProps>(
-  ({ as = "div", children, padding = 20, ...props }) => {
-    const Component = as;
+  ({ children, padding = 20, ...props }) => {
     return (
-      <Component {...props} style={{ padding }}>
+      <div {...props} style={{ padding }}>
         {children}
-      </Component>
+      </div>
     );
   }
 );

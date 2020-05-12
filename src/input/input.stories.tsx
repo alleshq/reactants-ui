@@ -11,8 +11,7 @@ export const DefaultInput = () => (
   <div style={{ padding: 25, display: "inline-block" }}>
     <Box>
       <Box.Content>
-        <Input placeholder="This is a placeholder" label="This a label" />
-        <Spacer y={0.5} />
+        <Input placeholder="Placeholder" label="This a label" />
       </Box.Content>
     </Box>
   </div>
