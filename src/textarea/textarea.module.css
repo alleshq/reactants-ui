@@ -1,0 +1,49 @@
+.textarea {
+  --textarea-background: var(--accents-2);
+  --textarea-color: var(--foreground);
+  --textarea-placeholder-color: var(--accents-5);
+}
+
+.textarea:focus {
+  --textarea-placeholder-color: var(--accents-4);
+}
+
+.textarea {
+  background: var(--textarea-background);
+  border: none;
+  border-radius: var(--radius);
+  outline: none;
+  padding: 0.85rem;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  resize: none;
+  width: 100%;
+  color: var(--textarea-color);
+}
+
+.textarea.resizable {
+  resize: auto;
+}
+
+.textarea::placeholder {
+  transition: color 0.2s ease;
+  color: var(--textarea-placeholder-color);
+}
+
+.label {
+  display: block;
+  font-weight: normal;
+  color: var(--accents-6);
+  padding: 0 0 0 1px;
+  margin-bottom: var(--gap-half);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.label > :global(*:first-child) {
+  margin-top: 0;
+}
+
+.label > :global(*:last-child) {
+  margin-bottom: 0;
+}

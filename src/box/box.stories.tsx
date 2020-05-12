@@ -2,6 +2,7 @@ import React from "react";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
 import { Box } from "./box";
 import { Input } from "../input";
+import { Textarea } from "../textarea";
 import { Spacer } from "../spacer";
 import { Button } from "../button";
 import { Avatar } from "../avatar";
@@ -62,6 +63,8 @@ export const SettingsExample = () => (
         <Input fluid label="Name" placeholder="John Doe" />
         <Spacer y={0.5} />
         <Input fluid label="Email" placeholder="john@example.com" />
+        <Spacer y={0.5} />
+        <Textarea label="Bio" placeholder="My name is John" />
         <Spacer y={0.5} />
       </Box.Content>
       <Box.Footer

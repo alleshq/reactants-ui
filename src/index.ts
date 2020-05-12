@@ -10,3 +10,4 @@ export * from "./loading";
 export * from "./breadcrumb";
 export * from "./utils/dark-mode";
 export * from "./utils/with-theme";
+export * from "./textarea";
