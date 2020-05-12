@@ -22,7 +22,7 @@ export const DefaultBox = () => (
 
 export const SettingsExample = () => (
   <div style={{ padding: 25, maxWidth: 500 }}>
-    <h3>Dante</h3>
+    <h3>Dante Issaias<sup>+</sup></h3>
     <Box>
       <Box.Content style={{display: "flex", alignItems: "center"}}>
         <Avatar username="dante" size={80} />
@@ -40,14 +40,7 @@ export const SettingsExample = () => (
               @dante
             </a>
 
-            <div style={{marginTop: 10}}>
-              <b>Alles+</b> (5 months)
-            </div>
-
-            <div style={{marginTop: 10}}>
-              <b>5</b> Rubies
-            </div>
-
+            {/* TODO: Implement badges and put them here. */}
           </div>
       </Box.Content>
     </Box>
