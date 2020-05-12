@@ -19,7 +19,10 @@ export const GenericAvatar: React.FC<GenericAvatarProps> = memo<
   }, []);
 
   return (
-    <span className={styles.avatar} style={{ width: size, height: size, ...props.style }}>
+    <span
+      className={styles.avatar}
+      style={{ width: size, height: size, ...props.style }}
+    >
       <img
         src={src}
         ref={imgRef}

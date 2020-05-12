@@ -22,26 +22,28 @@ export const DefaultBox = () => (
 
 export const SettingsExample = () => (
   <div style={{ padding: 25, maxWidth: 500 }}>
-    <h3>Dante Issaias<sup>+</sup></h3>
+    <h3>
+      Dante Issaias<sup>+</sup>
+    </h3>
     <Box>
-      <Box.Content style={{display: "flex", alignItems: "center"}}>
+      <Box.Content style={{ display: "flex", alignItems: "center" }}>
         <Avatar username="dante" size={80} />
 
-        <div style={{marginLeft: 20}}>
-            <a
-              href="#"
-              style={{
-                color: "var(--primary)",
-                marginTop: 7.5,
-                display: "block",
-                textDecoration: "none",
-              }}
-            >
-              @dante
-            </a>
+        <div style={{ marginLeft: 20 }}>
+          <a
+            href="#"
+            style={{
+              color: "var(--primary)",
+              marginTop: 7.5,
+              display: "block",
+              textDecoration: "none",
+            }}
+          >
+            @dante
+          </a>
 
-            {/* TODO: Implement badges and put them here. */}
-          </div>
+          {/* TODO: Implement badges and put them here. */}
+        </div>
       </Box.Content>
     </Box>
     <Spacer />
