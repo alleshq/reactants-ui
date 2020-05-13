@@ -3,8 +3,6 @@ export * from "./button";
 export * from "./box";
 export * from "./input";
 export * from "./header";
-export * from "./row";
-export * from "./col";
 export * from "./spacer";
 export * from "./loading";
 export * from "./breadcrumb";
