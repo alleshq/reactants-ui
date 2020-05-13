@@ -23,7 +23,7 @@
   --header-background: hsla(0, 0%, 100%, 0.8);
   --gap: 16px;
   --gap-half: 8px;
-  --box-border: none;
+  --box-border: 1px solid transparent;
 }
 
 :root.dark {
