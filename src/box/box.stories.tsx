@@ -49,7 +49,7 @@ export const SettingsExample = () => (
     </Box>
     <Spacer />
     <h3>Profile</h3>
-    <Box as="form">
+    <Box as="form" onSubmit={(e) => e.preventDefault()}>
       <Box.Header
         style={{
           display: "flex",
