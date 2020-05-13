@@ -12,7 +12,7 @@ A dark theme is included out of the box.
 
 To get, set and toggle the theme there is a single hook.
 
-```typescript
+```tsx
 import { useTheme } from "@reactants/ui";
 
 function ThemeToggle() {
