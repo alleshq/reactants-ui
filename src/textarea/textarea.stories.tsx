@@ -1,5 +1,5 @@
 import React from "react";
-import { Textarea } from "./textarea";
+import { Textarea } from ".";
 import { Box } from "../box";
 
 export default {

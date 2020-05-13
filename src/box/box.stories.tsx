@@ -1,6 +1,6 @@
 import React from "react";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
-import { Box } from "./box";
+import { Box } from ".";
 import { Input } from "../input";
 import { Textarea } from "../textarea";
 import { Spacer } from "../spacer";
