@@ -1,5 +1,5 @@
 // https://github.com/pacocoursey/paco/blob/master/lib/theme.ts
-import { useCallback, useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import useSWR from "swr";
 
 export type Theme = "light" | "dark" | "system";
@@ -50,6 +50,24 @@ const disableAnimation = () => {
     document.head.removeChild(css);
   };
 };
+
+export const ThemeScript = () => (
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `(function() {
+       try {
+          var mode = localStorage.getItem('${themeStorageKey}')
+          if (!mode) return
+          if (mode == "dark") document.documentElement.classList.add("dark")
+          else document.documentElement.classList.remove("dark")
+          var bgValue = getComputedStyle(document.documentElement)
+            .getPropertyValue('--background')
+          document.documentElement.style.background = bgValue
+        } catch (e) {}
+      })()`,
+    }}
+  />
+);
 
 export const useTheme = () => {
   const { data: theme, mutate } = useSWR(themeStorageKey, getTheme, {

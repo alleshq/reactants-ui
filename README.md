@@ -21,3 +21,7 @@ function ThemeToggle() {
   return <button onClick={() => toggleTheme()}>{theme}</button>;
 }
 ```
+
+Furthermore, for theme to work correctly you must include `<ThemeScript />` in your document's `<head>`.
+
+In Next.js this can be done by editing `_document.tsx`.
