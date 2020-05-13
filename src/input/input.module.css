@@ -73,6 +73,10 @@
   position: relative;
 }
 
+.icon svg {
+  color: var(--accents-5);
+}
+
 .icon.clickable {
   cursor: pointer;
 }
