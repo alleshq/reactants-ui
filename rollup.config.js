@@ -3,7 +3,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import postcss from "rollup-plugin-postcss";
-import copy from "rollup-plugin-copy";
 import pkg from "./package.json";
 
 export default {
@@ -25,7 +24,6 @@ export default {
     resolve(),
     commonjs(),
     typescript({ useTsconfigDeclarationDir: true }),
-    postcss({ extract: "index.css" }),
-    copy({ targets: [{ src: "src/global.css", dest: "dist/" }] }),
+    postcss({ extract: "global.css" }),
   ],
 };
