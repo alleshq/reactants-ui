@@ -1,5 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
+import { Coffee } from "react-feather";
 import { Button } from ".";
 
 export default {
@@ -134,6 +135,15 @@ export const LoadingState = () => (
 
     <Button loading small onClick={action("clicked")}>
       Small
+    </Button>
+  </Gap>
+);
+
+export const WithIcon = () => (
+  <Gap>
+    <Button icon={<Coffee />}>Left</Button>
+    <Button icon={<Coffee />} iconRight>
+      Right
     </Button>
   </Gap>
 );
